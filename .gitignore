@@ -2,3 +2,7 @@ _site
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+
+# Linux temporary files
+.splash.md.swo
+.swp
