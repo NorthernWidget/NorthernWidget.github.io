@@ -4,12 +4,14 @@ main:
     url: /loggers/
   - title: "Sensors"
     url: /sensors/
-  - title: "Software"
+  - title: "Utility boards"
+    url: /utility-boards/
+  - title: "Software & Firmware"
     url: /awtest/
   - title: "Tutorial"
     url: /awtest/
-  - title: "Gallery"
-    url: /gallery/
+  #- title: "Gallery"
+  #  url: /gallery/
   - title: "About"
     url: /splash-page/
 #  - title: "GitHub"
