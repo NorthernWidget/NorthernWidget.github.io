@@ -13,7 +13,7 @@ main:
   #- title: "Gallery"
   #  url: /gallery/
   - title: "About"
-    url: /splash-page/
+    url: /about/
 #  - title: "GitHub"
 #    url: /splash-page/
 #  - title: "Skunkworks"
