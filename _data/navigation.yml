@@ -1,9 +1,18 @@
+# main links
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+  - title: "Data loggers"
+    url: /loggers/
+  - title: "Sensors"
+    url: /sensors/
+  - title: "Software"
+    url: /awtest/
+  - title: "Tutorial"
+    url: /awtest/
+  - title: "Gallery"
+    url: /gallery/
   - title: "About"
-    url: /about/
+    url: /splash-page/
+#  - title: "GitHub"
+#    url: /splash-page/
+#  - title: "Skunkworks"
+#    url: /splash-page/
