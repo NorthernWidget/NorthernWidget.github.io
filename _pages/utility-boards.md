@@ -13,7 +13,7 @@ header:
       url: "https://github.com/NorthernWidget"
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
-  caption: "Pre-deployment chaos. Photo: A. Wickert"
+  caption: "Pre-deployment chaos and daisy-chaining Heptapods. A. Wickert (left) and S. Penprase (right). Photo: someone in our group."
 excerpt: "Converting communications protocols.<br>
           Amplifying signals.<br>
           Summing pulsed sensor outputs.<br>
