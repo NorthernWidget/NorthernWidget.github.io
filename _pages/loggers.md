@@ -22,17 +22,25 @@ excerpt: "Microamp power.<br>
           ***Designed for scientists by scientists***"
 ---
 
-# Margay [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Margay)
+# Data loggers
+
+## Margay
 
 *Lightweight and low-power logger.*
+[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Margay)
 
-![Margay data logger](https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Margay/master/Documentation/images/MargayAndyHand_cropped_2020-02-16_19.22.39.png)
+<img src="https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Margay/master/Documentation/images/MargayAndyHand_cropped_2020-02-16_19.22.39.png" alt="Margay data logger" width="480"/>
 
-# Resnik [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Resnik)
+
+## Resnik
 
 *Telemetry-enabled data logger.*
+[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Resnik)
 
-![Resnik data logger](https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Resnik/master/Documentation/images/Resnik_v040_FullyLoaded_perspective_20200428.png)
+<img src="https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Resnik/master/Documentation/images/Resnik_v040_FullyLoaded_perspective_20200428.png" alt="Resnik data logger" width="480"/>
+<br/>
+<br/>
+
 
 # Open-source licenses
 
