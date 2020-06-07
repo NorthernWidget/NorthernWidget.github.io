@@ -1,5 +1,6 @@
 ---
 layout: splash
+title: "Northern Widget LLC"
 permalink: /
 hidden: true
 header:
