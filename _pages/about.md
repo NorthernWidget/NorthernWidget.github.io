@@ -67,3 +67,18 @@ info AT northernwidget DOT com
 ## Sales
 
 We are currently transitioning through the year 2020 from development to development + sales. Please be in contact if you are interested in purchasing anything, and we will let you know what is available. Costs are dependent on quantity and development maturity.
+
+## Collaborations and thanks
+
+Our open-source instrumentation research has benefited greatly from collaborations with the University of Minnesota, including:
+* Andrew Wickert's *Surface Processes Instrumentation Lab*
+* Senior Design programs in both Electrical and Mechanical Engineering
+
+Significant financial support for our work is provided by the [World Meteorological Organization (WMO) Global Hydrometry Support Facility (HydroHub)](https://hydrohub.wmo.int/en/home) as part of an ongoing project to develop telemetered data loggers and better water-level sensors for use in Bhutan and Afghanistan.
+
+![WMO HydroHub](https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_hydrohub/wmod8_hydrohub/styles/header_image/public/2019-01/unnamed_1.png?ifcQq6ZHlJVc71YabAfAK2dusPncktQ0&itok=DaVJWrIv)
+
+
+<div style="text-align:center">
+<img src="/assets/images/NWseal_600px.png" alt="Northern Widget seal" width="200"/>
+</div>
