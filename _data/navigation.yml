@@ -6,8 +6,8 @@ main:
     url: /sensors/
   - title: "Utility boards"
     url: /utility-boards/
-  - title: "Software & Firmware"
-    url: /awtest/
+  #- title: "Software & Firmware"
+  #  url: /awtest/
   - title: "Tutorial"
     url: /tutorial/
   #- title: "Gallery"
