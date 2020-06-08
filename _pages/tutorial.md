@@ -23,7 +23,7 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
 
 ---
 
-*We know that this tutorial is terse! Don't worry: expanding it is on our to-do list. But we still weclome emails to prod -- or better, to help!*
+*This tutorial is a work in progress! Feel free to nudge us or ask questions.*
 
 # Overview
 
@@ -48,6 +48,8 @@ While superceded by more recent data-logger models, the [ALog
 README](https://github.com/NorthernWidget/ALog) has some of our most complete
 documentation. We're going to reuse some of it as we build this page, but want
 to give you early go-getters a link to start you out.
+
+<br/>
 
 # Step 1: Install software packages and libraries
 
@@ -102,6 +104,8 @@ We have a set of custom firmware libraries designed to make your life easier.
 The only step that you have to take is to install them. Go to
 [https://github.com/NorthernWidget/NorthernWidget-libraries] and follow the
 instructions in the README to add these to your `libraries` folder.
+
+<br/>
 
 # Step 2: Programming
 
@@ -448,6 +452,8 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * [Symbiont LiDAR rangefinder and orientation sensor](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library)
 * [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general information about using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
 
+<br/>
+
 # Step 3: Recording and plotting data
 
 ## Simple overview: turn on batteries, etc.
@@ -468,6 +474,8 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * Example with Pandas
 * Make sure that I manage the spaces in the headers
 * Think about more formal sets of multiple header lines (e.g., one standard "readable", one WATERML2)
+
+<br/>
 
 # Step 4: Field assembly
 
@@ -492,6 +500,8 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 ### Weather station
 
 ### Glacier-ablation station
+
+<br/>
 
 # Step 5: Deployment
 
