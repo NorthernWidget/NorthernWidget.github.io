@@ -210,7 +210,7 @@ This documentation includes instructions for both the NorthernWidget [Margay](ht
 ## Programming Northern Widget data loggers
 
 Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Resnik data logger having a complete example. For reference, these data loggers are:
-* [Project Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power.
+* [Project Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power. (More inforamtion available at the [Margay Library page](https://github.com/NorthernWidget-Skunkworks/Margay_Library))
 * [Project Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik): Telemetry-enabled with integrated solar charging.
 
 ### Margay: no sensor example
@@ -439,6 +439,14 @@ The most important functions for our standardized sensor interface are:
 * `mySensorObject.getString(<optional boolean in some cases to choose whether or not to update the values when taking a reading>)`: returns an [Arduino String object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) containing comma-separated data from the sensor readings.
 
 ## Programming reference
+
+We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxygen](https://github.com/sourcey/moxygen) to auto-generate documentation for our firmware libraries. These are currently available for:
+
+* [Resnik data logger](https://github.com/NorthernWidget-Skunkworks/Resnik_Library)
+* [Haar atmospheric temperature, pressure, and relative humidity sensor](https://github.com/NorthernWidget-Skunkworks/Haar_Library)
+* [Walrus submersible pressure (water-level) and temperature sensor](https://github.com/NorthernWidget-Skunkworks/Walrus_Library)
+* [Symbiont LiDAR rangefinder and orientation sensor](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library)
+* [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general inforamtion and using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
 
 # Step 3: Test logging
 
