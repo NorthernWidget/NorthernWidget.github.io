@@ -51,15 +51,31 @@ to give you early go-getters a link to start you out.
 
 # Step 1: Install software packages and libraries
 
+## Helpful external Arduino tutorials and documentation
+
+We use Arduino because it is a popular system with a large user base, mature software libraries, and extensive support! The information here is tailored a bit more to our sensors and data loggers, but is not as extensive as help available elsewhere on the internet. Here are some curated links to guides:
+
+**Adafruit: *Learn Arduino***
+* [Lesson 0](https://learn.adafruit.com/ladyadas-learn-arduino-lesson-number-0)
+* [Lesson 1](https://learn.adafruit.com/ladyadas-learn-arduino-lesson-number-1)
+* [Lesson 2](https://learn.adafruit.com/ladyadas-learn-arduino-lesson-number-2)
+
+**[Official Arduino programming reference](https://www.arduino.cc/reference/en)**
+
+**[Adafruit: *Adding Third-Party Boards*](https://learn.adafruit.com/add-boards-arduino-v164)**
+
 ## Arduino software, libraries, and boards definitions
+
+*Arduino is an open-source electronic hardware development platform. For more information on Arduino, go to https://www.arduino.cc/.*
 
 ### Download and install the Arduino IDE
 
 The Arduino IDE (Integrated Development Environment) is the current programming
-environment we use to write and upload programs to the ALog. (Other options
-exist, but this is the most beginner-friendly.) We haven't yet tested the
-brand-new web editor, so we'll be suggesting an old-fashioned download. And if
-you're deploying these in the field, you'll need the downloaded version! Go to
+environment we use to write and upload programs to the Northern Widget sensors
+and data loggers. (Other options exist, but this is the most beginner-friendly.)
+We haven't yet tested the brand-new web editor, so we'll be suggesting an
+old-fashioned download. And if you're deploying these in the field, you'll need
+the downloaded version! Go to
 [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software).
 (Windows users: go for the standard download, not the "app".) Get it, install
 it, go.
@@ -88,6 +104,88 @@ The only step that you have to take is to install them. Go to
 instructions in the README to add these to your `libraries` folder.
 
 # Step 2: Programming
+
+Materials needed:
+* [Arduino](https://www.arduino.cc/)-compatible device
+* A programming cable, which can be:
+  * A USB cable that can attach to this device (current Northern Widget data loggers use a USB A to micro-B cable, similar to all but the newest Android smartphones)
+  * An in-system programmer that attaches to a 6-pin header on the board
+
+If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.
+
+## The basics of uploading programs
+
+Arduino programs, often called "sketches", are how you tell the ALog data logger what to do. Here is some information to get you started.
+
+### A new program
+
+When you open the Arduino IDE, you will see a default blank "sketch":
+```c++
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
+
+`setup()` and `loop()` are both **functions**. These are specific sets of code that are executed when their names are called in the code. These two functions are special in that:
+
+1.  Every Arduino program much have them.
+2.  They do not need to be called by code that you write: Arduino automatically interprets and, indeed, requires that these be included.
+  *   Everything inside the curly braces after `setup()` is run once, when the data logger starts running
+  *   Everything inside the curly braces after `loop()` is run continuously, after `setup()`, until the Arduino device loses power.
+
+In addition:
+* You may include other code libraries and declare variables before these functions.
+* You may include additional functions after these functions.
+
+### Uploading code to the Arduino-compatible device
+
+Once your code is written -- either as a copy/paste of this or as your own -- save your code. All Arduino sketches need to be within their own folder; the Arduino IDE will ensure that this happens. After saving, you can upload in one of two ways:
+
+If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
+
+#### USB
+
+If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
+
+![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
+***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
+
+#### In-system programmer
+
+***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
+
+Otherwise, you may be uploading via a special device called an "in-circuit system programmer" (or just "in-system programmer, or "ISP") that attaches to a 2x3 header, with either 2.54 mm (0.1") or 1.27 mm (0.05") spacing. In this case, you may be:
+* uploading a bootloader, or
+* uploading firmware for a sensor.
+
+Many devices exist to upload bootloaders or firmware, including:
+* The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
+* Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
+* The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
+* The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
+
+In either case, you follow these two steps:
+
+1. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+2. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
+
+If you are uploading firmware using the programmer, you then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+
+![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
+
+Otherwise, if you are uploading a bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
+
+In either case, lights should flash on the programmer and board and a message should appear in the Arduino IDE that tells you whether or not you have succeeded. If it fails, try these approaches in order:
+1. Try flipping around the ISP (also called "ICSP") attachment,
+2. Make sure that all of your USB-cable connections are secure,
+3. Desperate internet searching.
+
 
 # Step 3: Test logging
 
