@@ -13,7 +13,7 @@ header:
       url: "https://github.com/NorthernWidget"
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
-  caption: "[Prof. G.-H. Crystal Ng](https://www.esci.umn.edu/people/Gene-Hua-Crystal-Ng) adjusting a hose clamp used as a emergency field cinch for a data logger box. *Photo: A. Wickert.*"
+  caption: "[Prof. G.-H. Crystal Ng](https://www.esci.umn.edu/people/Gene-Hua-Crystal-Ng) adjusting a hose clamp used as an emergency field cinch for a data logger box. *Photo: A. Wickert.*"
 excerpt: "Microamp power.<br>
           Standard sensor interfaces.<br>
           Automatic in-field emergency reboot.<br>
