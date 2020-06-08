@@ -56,9 +56,26 @@ feature_row4:
 
 ## Publications
 
-* Wickert, A. D., C. T. Sandell, B. Schulz, and G.-H. Crystal Ng (2019), [Open-source Arduino-compatible data loggers designed for field research](https://www.hydrol-earth-syst-sci.net/23/2065/2019/), *Hydrol. Earth Syst. Sci.*, *23*, 2065–2076, doi:10.5194/hess-23-2065-2019.
+### Development
 
-* Wickert, A. D. (2014), [The ALog: Inexpensive, Open-Source, Automated Data Collection in the Field](http://onlinelibrary.wiley.com/wol1/doi/10.1890/0012-9623-95.2.68/full), *Bull. Ecol. Soc. Am.*, *95*(2), 68–78, doi:10.1890/0012-9623-95.2.68.
+* Wickert, A. D., C. T. Sandell, B. Schulz, and G.-H. Crystal Ng (2019), [Open-source Arduino-compatible data loggers designed for field research](https://www.hydrol-earth-syst-sci.net/23/2065/2019/), *Hydrol. Earth Syst. Sci.*, *23*, 2065–2076, [doi:10.5194/hess-23-2065-2019](https://doi.org/10.5194/hess-23-2065-2019).
+
+* Wickert, A. D. (2014), [The ALog: Inexpensive, Open-Source, Automated Data Collection in the Field](http://onlinelibrary.wiley.com/wol1/doi/10.1890/0012-9623-95.2.68/full), *Bull. Ecol. Soc. Am.*, *95*(2), 68–78, [doi:10.1890/0012-9623-95.2.68](https://doi.org/10.1890/0012-9623-95.2.68).
+
+### Applications
+
+* Ng, G.‐H. C., Rosenfeld, C., Santelli, C. M., Yourd, A. R., Lange, J., Duhn, K., & Johnson, N. W. (2020). [Microbial and reactive transport modeling evidence for hyporheic flux‐driven cryptic sulfur cycling and anaerobic methane oxidation in a sulfate‐impacted wetland‐stream system](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2019JG005185). *Journal of Geophysical Research: Biogeosciences*, *125*, e2019JG005185. [doi:10.1029/2019JG005185](https://doi.org/10.1029/2019JG005185).
+
+* Saberi, L., R. T. McLaughlin, G.-H. C. Ng, J. La Frenierre, A. D. Wickert, M. Baraer, W. Zhi,
+L. Li, and B. G. Mark (2019), [Multi-scale temporal variability in meltwater contributions
+in a tropical glacierized watershed](https://www.hydrol-earth-syst-sci.net/23/405/2019/), *Hydrol. Earth Syst. Sci.*, *23*, 405–425, [doi:10.5194/hess-23-405-2019](https://doi.org/10.5194/hess-23-405-2019).
+
+* Tauro, F., Selker, J., van de Giesen, N., Abrate, T., Uijlenhoet, R., Porfiri, M., Manfreda, S.,
+Caylor, K., Moramarco, T., Benveniste, J., Ciraolo, G., Estes, L., Domeneghetti, A., Perks,
+M., Corbari, C., Rabiei, E., Ravazzani, G., Bogena, H., Harfouche, A., Brocca, L., Maltese,
+A., Wickert, A., Tarpanelli, A., Good, S., Lopez Alcala, J. M., Petroselli, A., Cudennec,
+C., Blume, T., Hut, R., and Grimaldi, S. (2018), [Measurements and Observations in the
+XXI century (MOXXI): innovation and multidisciplinarity to sense the hydrological cycle](https://www.tandfonline.com/doi/full/10.1080/02626667.2017.1420191), *Hydrological Sciences Journal*, *63*(2), 169–196, [doi:10.1080/02626667.2017.1420191](https://doi.org/10.1080/02626667.2017.1420191).
 
 ## Contact
 
