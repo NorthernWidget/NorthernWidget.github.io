@@ -450,12 +450,24 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 
 # Step 3: Recording and plotting data
 
+## Simple overview: turn on batteries, etc.
+
 ## Guide to Margay / Resnik LED flash patterns
 
 * https://github.com/NorthernWidget-Skunkworks/Margay_Library
 * https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation
 
 *Let's make these more intuitive and user-friendly*
+
+## Data files and SD cards
+* Proper ways to swap SD cards
+* Copy/pasting data files
+* Example data-file contents
+
+## Plotting data
+* Example with Pandas
+* Make sure that I manage the spaces in the headers
+* Think about more formal sets of multiple header lines (e.g., one standard "readable", one WATERML2)
 
 # Step 4: Field assembly
 
@@ -484,3 +496,5 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 # Step 5: Deployment
 
 This could be a really short add-on to the above section, could be a way to summarize/wrap up, or could be superfluous.
+
+Could also include troubleshooting?
