@@ -198,6 +198,13 @@ In either case, lights should flash on the programmer and board and a message sh
 2. Make sure that all of your USB-cable connections are secure,
 3. Desperate internet searching.
 
+## Programming Northern Widget sensors
+
+We include specific instructions for uploading firmware (or, rarely, a bootloader) to Northern Widget sensors on the `README.md` pages that appear in our repositories on GitHub. Those that include this information include:
+* [Project Haar](https://github.com/NorthernWidget-Skunkworks/Project-Haar): ruggedized and waterproof atmospheric temperature, pressure, and relative-humidity sensor
+* [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus): submersible and waterproof sensor to measure pressure and temperature; typically used for water level but can also provide atmospheric conditions.
+* [Project Symbiont](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR): LiDAR interface for distance and orientation measurements.
+
 
 # Step 3: Test logging
 
