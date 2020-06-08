@@ -446,10 +446,41 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * [Haar atmospheric temperature, pressure, and relative humidity sensor](https://github.com/NorthernWidget-Skunkworks/Haar_Library)
 * [Walrus submersible pressure (water-level) and temperature sensor](https://github.com/NorthernWidget-Skunkworks/Walrus_Library)
 * [Symbiont LiDAR rangefinder and orientation sensor](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library)
-* [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general inforamtion and using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
+* [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general information about using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
 
-# Step 3: Test logging
+# Step 3: Recording and plotting data
+
+## Guide to Margay / Resnik LED flash patterns
+
+* https://github.com/NorthernWidget-Skunkworks/Margay_Library
+* https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation
+
+*Let's make these more intuitive and user-friendly*
 
 # Step 4: Field assembly
 
+## Recommended Tools
+
+* Tool roll picture
+* List with rationale
+
+## Example mounting structures
+
+* Including information / pictures on attaching loggers and sensors to these structures
+
+## Example deployments
+
+* Include photos, videos, descriptions, ..., curated from multiple folks at multiple sites
+* Possible ideas below
+
+### Stream gauge
+
+### Lake-level gauge?
+
+### Weather station
+
+### Glacier-ablation station
+
 # Step 5: Deployment
+
+This could be a really short add-on to the above section, could be a way to summarize/wrap up, or could be superfluous.
