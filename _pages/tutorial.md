@@ -126,7 +126,7 @@ Arduino programs, often called "sketches", are how you tell An Arduino device wh
 * **Bootloader**: A small piece of firmware that is installed in a specific portion of the microcontroller's memory. In the case of Arduino-compatible devices, this is almost always to allow the device to be programmed via USB.
 * **Function**: A defined section of code that completes some task and optionally returns output
 * **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another ceral or item); my box of Cap'n Crunch is an object).
-* **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code.
+* **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code. It contains a `*.h` and a `*.cpp` file and typically resides within the "libraries" folder of your Arduino app (in the case of Mac) or directory (in the case of Linux or Windows).
 
 ### A new program
 
@@ -258,6 +258,8 @@ void initialize()
 *This example is a direct copy/paste of https://github.com/NorthernWidget-Skunkworks/Project-Resnik#how-to-write-a-program.*
 
 The below program is an example that you can copy and paste directly into the Arduino IDE in order to upload to your data logger. We'll walk you through what each piece of the code is and does.
+
+>> @awickert: use a more modern sensor library with appropriate camelCase.
 
 #### Full program
 ```c++
@@ -396,6 +398,47 @@ String Update()
 ```
 
 The `Update()` function first calls the `Init()` function to be sure that the sensor is ready to log. It then in this case delays 1500 milliseconds; this is an ad-hoc solution to the question of how long it takes the pressure transducer to settle after being started up, and is a safe large amount of time. This function then can `return` a string of all of the Walrus' readings (one pressure and two temperature measurements) separated by commas. This is then concatenated to a list of logger-internal measurements -- date/time; on-board temperature, pressure, and relative humidity; and onboard voltages for battery and solar-panel status -- and recorded to the SD card. If telemetry were present, these data could also be sent to a remote location.
+
+## Sensor libraries
+
+Northern Widget sensor libraries expose a standardized interface, as noted above. Adding support for a sensor involves three or four steps.
+
+### Header
+
+First, include the library's header file, which provides access to its functions:
+
+```c++
+#include LibraryName.h
+```
+
+### Instantiation
+
+Next, "instantiate" an object -- meaning that you check out an instance of the class within the library. By convention, we make `ClassName`, the name of this class, be identical to `LibraryName`. This just makes life easier when there is only one class (or at least, only one significant class) inside each library! To instantiate a library, add a line like the following in an Arduino sketch, below the library `#include`s and above `void setup()`:
+
+```c++
+ClassName mySensorObject
+```
+
+Here, `mySensorObject` can be whatever you want to call the instance of the object.
+
+### Definition of I2C addresses in use
+
+As noted in the Resnik example above, this is the trickiest step (but one you can skip) because you need to know the address of your sensor. If your sensor does not have an I2C address, then you may also skip this.
+
+```c++
+uint8_t I2CVals[1] = {SENSOR_I2C_ADDRESS_1, SENSOR_I2C_ADDRESS_2, ...};
+```
+
+We are hoping to find a way in the future to avoid the need to enter this information by hand.
+
+### Important functions
+
+The most important functions for our standardized sensor interface are:
+* `mySensorObject.begin(<variables if needed>)`: performs the work to start up the sensor and prepare it to take measurements
+* `mySensorObject.getHeader()`: returns an [Arduino String object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) containing an informational comma-separated header describing the sensor measurements and their units.
+* `mySensorObject.getString(<optional boolean in some cases to choose whether or not to update the values when taking a reading>)`: returns an [Arduino String object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) containing comma-separated data from the sensor readings.
+
+## Programming reference
 
 # Step 3: Test logging
 
