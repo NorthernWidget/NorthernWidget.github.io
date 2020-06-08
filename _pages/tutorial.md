@@ -205,6 +205,197 @@ We include specific instructions for uploading firmware (or, rarely, a bootloade
 * [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus): submersible and waterproof sensor to measure pressure and temperature; typically used for water level but can also provide atmospheric conditions.
 * [Project Symbiont](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR): LiDAR interface for distance and orientation measurements.
 
+This documentation includes instructions for both the NorthernWidget [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data loggers, as well as code to work on generic Arduino devices.
+
+## Programming Northern Widget data loggers
+
+Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Resnik data logger having a complete example. For reference, these data loggers are:
+* [Project Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power.
+* [Project Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik): Telemetry-enabled with integrated solar charging.
+
+### Margay: no sensor example
+
+A simple program for a Margay data logger, connected to no sensors
+
+```c++
+/*
+ * Margay example: no sensors attached
+ */
+
+#include "Margay.h"
+#include <TP_Downhole_Longbow.h>
+
+Margay Logger; // Instantiate data logger object
+
+String Header = ""; // Information header; starts as an empty string
+uint8_t I2CVals[0] = {}; // I2C addresses of sensors
+
+unsigned long UpdateRate = 60; // Number of seconds between readings
+
+void setup() {
+    Logger.begin(I2CVals, sizeof(I2CVals), Header);
+    initialize();
+}
+
+void loop() {
+  Logger.Run(Update, UpdateRate);
+}
+
+String Update()
+{
+  initialize();
+  delay(1500);
+  return Walrus.GetString();
+}
+
+void initialize()
+{
+}
+```
+
+### Resnik: full breakdown
+
+*This example is a direct copy/paste of https://github.com/NorthernWidget-Skunkworks/Project-Resnik#how-to-write-a-program.*
+
+The below program is an example that you can copy and paste directly into the Arduino IDE in order to upload to your data logger. We'll walk you through what each piece of the code is and does.
+
+#### Full program
+```c++
+/*
+ * Resnik example: connected with a Walrus pressure--temperature sensor, often
+ * used for water-level measurements, via the Longbow I2C/RS-485 translator.
+ * Written by Bobby Schulz with a few comments added by Andy Wickert.
+ */
+
+#include "Resnik.h"
+#include <TP_Downhole_Longbow.h>
+
+TP_Downhole_Longbow Walrus; // Instantiate Walrus sensor; relict library name
+Resnik Logger; // Instantiate data logger object
+
+String Header = ""; // Information header; starts as an empty string
+uint8_t I2CVals[1] = {0x22}; // I2C addresses of sensors
+
+unsigned long UpdateRate = 60; // Number of seconds between readings
+
+void setup() {
+  Header = Header + Walrus.GetHeader();
+  Logger.begin(I2CVals, sizeof(I2CVals), Header); // Pass header info to logger
+  Init();
+}
+
+void loop() {
+  Logger.Run(Update, UpdateRate);
+}
+
+String Update()
+{
+  Init();
+  delay(1500);
+  return Walrus.GetString();
+}
+
+void Init()
+{
+  Walrus.begin(13, 0x22); // Instantiate Walrus (at address = 13)
+                          // and Longbow Widget (at address = 0x22)
+}
+```
+
+#### "Include" statements
+
+```c++
+#include "Resnik.h"
+#include <TP_Downhole_Longbow.h>
+```
+
+These bring in the two code libraries involved, the former for the data logger and the latter for the sensors. This allows the user to access the classes and functions within these two libraries, as we will show in more detail below.
+
+#### Instantiate a sensor object
+
+```c++
+TP_Downhole_Longbow Walrus; // Instantiate Walrus sensor; relict library name
+Resnik Logger; // Instantiate data logger object
+```
+
+"Instantiating an object" means that we create our own specific versions of the a class of items. This can be thought of as: `Breakfast myBreakfast`. Breakfast is the general concept, but I create "myBreakfast", which I can then modify. In this same way, "Logger" is what we call our Project Resnik data logger, and "Walrus" is what we call our "TP_Downhole_Longbow" sensor; this name is a holdover from an earlier design that is the ancestor of the Walrus. We can then access functions and variables within these two instantiated objects.
+
+#### Declare the header string
+
+```c++
+String Header = ""; // Information header; starts as an empty string
+```
+
+We start with an empty header, but will soon add information to it.
+
+#### Create a list of the I2C addresses of the sensors
+
+```c++
+uint8_t I2CVals[1] = {0x22}; // I2C addresses of sensors
+```
+
+This is the trickiest step. You need to know what the I2C address of your sensor is. You can skip this, but then the logger will not run a check to see if the sensor is properly connected.
+
+>> Let's make sure that we record this one each page, or find a way to replace this.
+
+#### Declare the amount of time between logging events
+
+```c++
+unsigned long UpdateRate = 60; // Number of seconds between readings
+```
+
+This is the number of seconds between logging events. If it takes 2 seconds to record data, make sure that you give the logger at least 3 seconds between events. The maximum logging time is set by the watchdog timer, which [FINISH HERE]
+
+>> @BSCHULZ1701: Is there an external WDT on Resnik?
+
+#### `setup()` step: runs once at the start
+
+```c++
+void setup() {
+  Header = Header + Walrus.GetHeader();
+  Logger.begin(I2CVals, sizeof(I2CVals), Header); //Pass header info to logger
+  Init();
+}
+```
+
+`setup()` is a special function that runs just once when the logger boots up. In this case, it first adds the Walrus' header to the header string. `GetHeader()` is a standard function that lies within each of our sensor libraries and returns this header information as a `String`. We then pass the header and the I2C values to the Resnik library's `begin()` function. This sets up the header and prepares the data loger to record data. Finally, this function calls `Init()`, which we skip ahead to describe immediately below.
+
+>> (awickert): I still don't understand why we have to pass `sizeof()` and can't just compute that within the function.
+
+#### `Init()` function: skipping ahead to understand `setup()`
+
+```c++
+void Init()
+{
+  Walrus.begin(13, 0x22); // Instantiate Walrus (at address = 13)
+                          // and Longbow Widget (at address = 0x22)
+}
+```
+
+The `Init()` function calls the `begin()` function, standard within each Northern Widget sensor library, to instantiate the connection ports (e.g., I2C, RS-485) used to communicate between the sensor and the logger. In this case, there is only one sensor, but two ports are needed: An RS-485 signal goes from the Walrus to the Longbow Widget, which then converts the signal into an I2C signal with its own address. The reason for this is that an I2C signal can travel only ~3 m, but an RS-485 signal can travel ~100 m.
+
+#### `loop()` step: keeps running until stopped
+
+```c++
+void loop() {
+  Logger.Run(Update, UpdateRate);
+}
+```
+
+The loop calls the main function of the Resnik library, `Run()`, repeatedly. This puts the logger into a low-power sleep mode and wakes it up only when interrupted by the clock or the "LOG" button. `Update` refers to the function described immediately below. `UpdateRate` is our logging interval defined above.
+
+#### `Update()` function: Gives data for the logger to record
+
+```c++
+String Update()
+{
+  Init();
+  delay(1500);
+  return Walrus.GetString();
+}
+```
+
+The `Update()` function first calls the `Init()` function to be sure that the sensor is ready to log. It then in this case delays 1500 milliseconds; this is an ad-hoc solution to the question of how long it takes the pressure transducer to settle after being started up, and is a safe large amount of time. This function then can `return` a string of all of the Walrus' readings (one pressure and two temperature measurements) separated by commas. This is then concatenated to a list of logger-internal measurements -- date/time; on-board temperature, pressure, and relative humidity; and onboard voltages for battery and solar-panel status -- and recorded to the SD card. If telemetry were present, these data could also be sent to a remote location.
 
 # Step 3: Test logging
 
