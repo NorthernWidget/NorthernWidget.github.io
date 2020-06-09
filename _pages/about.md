@@ -93,7 +93,7 @@ Our open-source instrumentation research has benefited greatly from collaboratio
 
 Significant financial support for our work is provided by the [World Meteorological Organization (WMO) Global Hydrometry Support Facility (HydroHub)](https://hydrohub.wmo.int/en/home) as part of an ongoing project to develop telemetered data loggers and better water-level sensors for use in Bhutan and Afghanistan.
 
-![WMO HydroHub](https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_hydrohub/wmod8_hydrohub/styles/header_image/public/2019-01/unnamed_1.png?ifcQq6ZHlJVc71YabAfAK2dusPncktQ0&itok=DaVJWrIv)
+![WMO](https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_hydrohub/wmod8_hydrohub/styles/header_image/public/2019-01/wmolong.png?kbBlL3_v89EyktRF16SWOWl_OkWxg2FK&itok=5e8hBYxY)
 
 
 <div style="text-align:center">
