@@ -18,41 +18,58 @@ intro:
   - excerpt: "On June 6, 2012, a group of friends on St. Paul's east side gathered with a mission to build build hardware, firmware, and software to help anyone, anywhere, measure the environment around them. We are passionate about water resources, international development, scientific advances, and technology. Since that time, we have spent nights, weekends, and scattered pockets of time to build a suite of quality data loggers, sensors, and tools. All of our designs are open source, and our philosophy is first and foremost to improve global access to foundational environmental data."
 feature_row1:
   - image_path: /assets/images/andy_square_320px.png
+    image_size: 180px
     alt: "Andy Wickert"
     title: "Andy Wickert"
-    excerpt: "President and co-founder"
-    #url: "#test-link"
-feature_row2:
+    excerpt: "**President and co-founder**<br/>
+              Direction and funding<br/>
+              Scientific objectives<br/>
+              Firmware architecture<br/>
+              Documentation&emsp;&emsp;&emsp;&emsp;
+              "
+    url: "https://github.com/awickert"
+    btn_label: "GitHub"
+    btn_class: "btn--inverse"
   - image_path: /assets/images/bobby_square_320px.png
+    image_size: 180px
     alt: "Bobby Schulz"
     title: "Bobby Schulz"
-    excerpt: "Lead engineer"
-    #url: "#test-link"
-feature_row3:
+    excerpt: "**Lead engineer (electrical)**<br/>
+              Electronic hardware design and efficient power paths<br/>
+              CAD, 3D printing, and CNC milling<br/>
+              Lead firmware developer
+              "
+    url: "https://github.com/bschulz1701"
+    btn_label: "GitHub"
+    btn_class: "btn--inverse"
   - image_path: /assets/images/chad_square_320px.png
+    image_size: 180px
     alt: "Chad Sandell"
     title: "Chad Sandell"
-    excerpt: "Engineer and co-founder"
-    #url: "#test-link"
-feature_row4:
+    excerpt: "**Engineer (mechanical) and co-founder**<br/>
+              CAD, 3D printing, and CNC milling<br/>
+              Production runs<br/>
+              Electronics design<br>"
+    url: "https://github.com/superchap123"
+    btn_label: "GitHub"
+    btn_class: "btn--inverse"
   - image_path: /assets/images/lorenzo_square_320px.png
+    image_size: 180px
     alt: "Lorenzo Dandrea"
     title: "Lorenzo Dandrea"
-    excerpt: "Developer and co-founder"
-    #url: "#test-link"
+    excerpt: "**Developer and co-founder**<br/>
+              e-commerce and web backend<br/>
+              Business planning"
+    url: "https://github.com/BaronVonToby"
+    btn_label: "GitHub"
+    btn_class: "btn--inverse"
 ---
 
 {% include feature_row id="intro" type="center" %}
 
 ## People
 
-{% include feature_row id="feature_row1" type="left" %}
-
-{% include feature_row id="feature_row2" type="left" %}
-
-{% include feature_row id="feature_row3" type="left" %}
-
-{% include feature_row id="feature_row4" type="left" %}
+{% include feature_row id="feature_row1" %}
 
 ## Publications
 
