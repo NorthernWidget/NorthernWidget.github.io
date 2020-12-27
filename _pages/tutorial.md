@@ -467,6 +467,8 @@ Follow the instructions and images on the [SetTime GUI GitHub page](https://gith
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q0fVwhMNLZg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br/>
+
 # Step 3: Recording and plotting data
 
 ## Simple overview: turn on batteries, etc.
@@ -477,7 +479,6 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 * [Firmware library for the Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
 * [Firmware library for the Resnik](https://github.com/NorthernWidget-Skunkworks/Resnik_Library)
-
 
 ## Guide to Margay / Resnik field operations and LED flash patterns
 
