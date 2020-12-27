@@ -471,10 +471,17 @@ Follow the instructions and images on the [SetTime GUI GitHub page](https://gith
 
 ## Simple overview: turn on batteries, etc.
 
-## Guide to Margay / Resnik LED flash patterns
+## Margay / Resnik library references
 
-* https://github.com/NorthernWidget-Skunkworks/Margay_Library
-* https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation
+We use Doxygen to auto-generate basic code referencing information, and populate this into the Readme markdown files.
+
+* [Firmware library for the Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
+* [Firmware library for the Resnik](https://github.com/NorthernWidget-Skunkworks/Resnik_Library)
+
+
+## Guide to Margay / Resnik field operations and LED flash patterns
+
+[Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) *These LED flashes are applicable to Resnik as well.*
 
 *Let's make these more intuitive and user-friendly*
 
