@@ -31,10 +31,12 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
     * Northern Widget libraries and dependencies
     * Northern Widget board and microcontroller definitions
     * (If needed for sensors) third-party microcontroller definitions
+    * Clock-setting GUI
 2. [Program your data logger and (if needed) sensor(s)](#step-2-programming)
     * Bootload the data logger (ICSP)
     * Burn firmware to sensors (ICSP)
     * Upload code to data logger (USB)
+    * Set the clock (USB)
 3. [Test and download/view data](#step-3-test-logging)
 4. [Assemble the field housing and sensor mount](#step-4-field-assembly)
     * Enclosure
@@ -103,6 +105,10 @@ We have a set of custom firmware libraries designed to make your life easier.
 The only step that you have to take is to install them. Go to
 [https://github.com/NorthernWidget/NorthernWidget-libraries] and follow the
 instructions in the README to add these to your `libraries` folder.
+
+### Install the graphical user interface (GUI) to set the logger's clock
+
+Follow the instructions at the [SetTimeGUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI).
 
 <br/>
 
@@ -452,6 +458,14 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general information about using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
 
 <br/>
+
+## Setting the clock
+
+Before you record data, you'll want to make sure that your logger knows what time it is. This is the only way to ensure that your data are paired with the proper timestamp, without which they often become much less useful!
+
+Follow the instructions and images on the [SetTime GUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI), and/or watch the video below:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q0fVwhMNLZg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Step 3: Recording and plotting data
 
