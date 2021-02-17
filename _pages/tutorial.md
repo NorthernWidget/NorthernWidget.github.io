@@ -103,7 +103,7 @@ support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE.
 
 We have a set of custom firmware libraries designed to make your life easier.
 The only step that you have to take is to install them. Go to
-[https://github.com/NorthernWidget/NorthernWidget-libraries] and follow the
+https://github.com/NorthernWidget/NorthernWidget-libraries and follow the
 instructions in the README to add these to your `libraries` folder.
 
 ### Install the graphical user interface (GUI) to set the logger's clock
