@@ -491,6 +491,11 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 * Copy/pasting data files
 * Example data-file contents
 
+## Returning data via telemetry with Particle
+
+Google Sheets: 
+https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
+
 ## Plotting data
 * Example with Pandas
 * Make sure that I manage the spaces in the headers
