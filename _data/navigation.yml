@@ -14,6 +14,8 @@ main:
   #  url: /gallery/
   - title: "About"
     url: /about/
+  - title: "Store"
+    url: /store/
 #  - title: "GitHub"
 #    url: /splash-page/
 #  - title: "Skunkworks"
