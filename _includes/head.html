@@ -1,17 +1,36 @@
+<!--
+	Modified from Minimal Mistakes
+	https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html
+-->
+
 <meta charset="utf-8">
 
 {% include seo.html %}
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+<!-- Header for snipcart -->
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+ <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+ <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+ <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" />
+ <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+</head>
+
+<!-- <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed"> -->
 
 <!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
+<!--
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
+-->
 
-<!-- For all browsers -->
+<!-- Favicon for all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="shortcut icon" type="image/png" href="/assets/images/favicon-32x32.png">
 
@@ -29,6 +48,7 @@
     }
   </style>
 <![endif]-->
+
 
 {% if site.head_scripts %}
   {% for script in site.head_scripts %}

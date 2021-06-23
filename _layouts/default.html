@@ -19,6 +19,7 @@
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
 
+    <!-- Commenting out for Snipcart default to work -->
     <div class="initial-content">
       {{ content }}
     </div>
@@ -36,7 +37,21 @@
       </footer>
     </div>
 
+    <!--
+	    SNIPCART - BUT ADDING THIS DUPLICATES THE CONTENT
+	    I commented out an above section that leads to this
+	    But then the order gets all messy - footer before content
+    <main class="main">
+      <div class="products">
+        {{ content }}
+      </div>
+    </main>
+    {% include footer.html %}
     {% include scripts.html %}
-
+    -->
   </body>
+
+<div hidden id="snipcart" data-api-key="OTVjOGUwOWQtNzUxOS00YzY3LWFiZjgtNjNiZjk3OTI0MGVjNjM3NTYwMDk5MjQxNTY1NjA1"></div>
+<script src="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.js" defer></script>
+
 </html>
