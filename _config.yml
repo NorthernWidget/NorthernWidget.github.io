@@ -267,9 +267,6 @@ compress_html:
     envs: development
 
 
-collections:
-  - products
-
 # Defaults
 defaults:
   # _posts
