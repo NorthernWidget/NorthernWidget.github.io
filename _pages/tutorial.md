@@ -92,7 +92,7 @@ set up support for these boards yourself. We've made a pretty thorough
 walkthrough that you can view here at
 [https://github.com/NorthernWidget/Arduino_Boards](https://github.com/NorthernWidget/Arduino_Boards).
 
-### Add boards definitins for the ATTiny microcontrollers
+### Add boards definitions for the ATTiny microcontrollers
 
 ***This step is required only if you have to upload firmware to Northern Widget sensors.***
 
@@ -493,7 +493,7 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 ## Returning data via telemetry with Particle
 
-Google Sheets: 
+Google Sheets:
 https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 ## Plotting data
