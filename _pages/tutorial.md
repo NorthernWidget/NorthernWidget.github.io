@@ -115,10 +115,17 @@ Follow the instructions at the [SetTimeGUI GitHub page](https://github.com/North
 # Step 2: Programming
 
 Materials needed:
-* [Arduino](https://www.arduino.cc/)-compatible device
+* Your PC with previous software/libraries loaded
+* [Arduino](https://www.arduino.cc/)-compatible device (e.g. your logger)
 * A programming cable, which can be:
-  * A USB cable that can attach to this device (current Northern Widget data loggers use a USB A to micro-B cable, similar to all but the newest Android smartphones)
-  * An in-system programmer that attaches to a 6-pin header on the board
+  * A USB cable that can attach to this device (current Northern Widget data loggers use a USB type-A to micro-B cable, similar to all but the newest Android smartphones)
+* An in-system programmer (ISP) that attaches to a 6-pin header on the board
+  * Examples:
+    * The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
+    * Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
+    * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
+    * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
+  * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
 
 If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.
 
