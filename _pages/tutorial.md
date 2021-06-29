@@ -96,8 +96,11 @@ walkthrough that you can view here at
 
 ***This step is required only if you have to upload firmware to Northern Widget sensors.***
 
-Follow the [instructions to download and install ATTinyCore microcontroller
-support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE.
+You can follow the [instructions to download and install ATTinyCore microcontroller
+support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE, but for clarity here are some basic instructions:
+  * Go to the [ATTinyCore microcontroller GitHub page](https://github.com/SpenceKonde/ATTinyCore), here you will find all details about ATTinyCore
+  * Scroll down and click on the "Installation" link right above the "Wiring and required components link"
+  * From there, follow the installation instructions based on your preferred installation method - either through the Arduino Boards Manager or manually
 
 ### Install all Northern Widget libraries and their dependencies
 
