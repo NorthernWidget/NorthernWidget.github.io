@@ -130,7 +130,7 @@ Materials needed:
     * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
   * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
 
-If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.
+**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.**
 
 ## The basics of uploading programs
 
@@ -147,7 +147,7 @@ Arduino programs, often called "sketches", are how you tell an Arduino device wh
 * **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another ceral or item); my box of Cap'n Crunch is an object).
 * **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code. It contains a `*.h` and a `*.cpp` file and typically resides within the "libraries" folder of your Arduino app (in the case of Mac) or directory (in the case of Linux or Windows).
 
-### A new program
+### Arduino starting screen
 
 When you open the Arduino IDE, you will see a default blank "sketch":
 ```c++
@@ -173,19 +173,7 @@ In addition:
 * You may include other code libraries and declare variables before these functions.
 * You may include additional functions after these functions.
 
-### Uploading code to the Arduino-compatible device
-
-Once your code is written -- either as a copy/paste of this or as your own -- save your code. All Arduino sketches need to be within their own folder; the Arduino IDE will ensure that this happens. After saving, you can upload in one of two ways:
-
-If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
-
-#### USB
-
-If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
-
-![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
-
-***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
+### Bootloading
 
 #### In-system programmer
 
@@ -216,6 +204,20 @@ In either case, lights should flash on the programmer and board and a message sh
 1. Try flipping around the ISP (also called "ICSP") attachment,
 2. Make sure that all of your USB-cable connections are secure,
 3. Desperate internet searching.
+
+### Uploading code to the Arduino-compatible device
+
+Once your code is written -- either as a copy/paste of this or as your own -- save your code. All Arduino sketches need to be within their own folder; the Arduino IDE will ensure that this happens. After saving, you can upload in one of two ways:
+
+If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
+
+#### USB
+
+If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
+
+![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
+
+***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
 
 ## Programming Northern Widget sensors
 
