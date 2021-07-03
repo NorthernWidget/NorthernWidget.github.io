@@ -175,6 +175,8 @@ In addition:
 
 ### Bootloading
 
+**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then please proceed to the "Uploading code to the Arduino-compatible device" section below.**
+
 #### In-system programmer
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
