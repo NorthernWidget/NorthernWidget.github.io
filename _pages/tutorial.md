@@ -134,16 +134,16 @@ If you are just programming an Arduino board or data logger, which already has a
 
 ## The basics of uploading programs
 
-Arduino programs, often called "sketches", are how you tell An Arduino device what to do. Here is some information to get you started.
+Arduino programs, often called "sketches", are how you tell an Arduino device what to do. Here is some information to get you started.
 
-### Definitions
+### Terminology
 
 * **Microcontroller**: A computer chip that integrates a processor, memory, and methods to take electrical inputs and send electrical signals.
 * **Software**: A program that involves active changes and interactions. This typically exists on a computer and runs within an operating system. An example here is the Arduino IDE.
 * **Firmware**: A program that is uploaded once to a computer or microcontroller and then executes the same set of commands. Any code that you upload to an Arduino-compatible device is an example of firmware.
-* **Sketch**: The Arduino name for the C++ source code in which you write a program
+* **Sketch**: The Arduino name for the C++ source code in which you write a program.
 * **Bootloader**: A small piece of firmware that is installed in a specific portion of the microcontroller's memory. In the case of Arduino-compatible devices, this is almost always to allow the device to be programmed via USB.
-* **Function**: A defined section of code that completes some task and optionally returns output
+* **Function**: A defined section of code that completes some task and optionally returns output.
 * **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another ceral or item); my box of Cap'n Crunch is an object).
 * **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code. It contains a `*.h` and a `*.cpp` file and typically resides within the "libraries" folder of your Arduino app (in the case of Mac) or directory (in the case of Linux or Windows).
 
