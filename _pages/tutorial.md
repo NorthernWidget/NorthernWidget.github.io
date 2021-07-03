@@ -32,7 +32,7 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
     * Northern Widget board and microcontroller definitions
     * (If needed for sensors) third-party microcontroller definitions
     * Clock-setting GUI
-2. [Program your data logger and (if needed) sensor(s)](#step-2-programming)
+2. [Program your data logger and, if needed, sensor(s)](#step-2-programming)
     * Bootload the data logger (ICSP)
     * Burn firmware to sensors (ICSP)
     * Upload code to data logger (USB)
@@ -83,7 +83,7 @@ the downloaded version! Go to
 (Windows users: go for the standard download, not the "app".) Get it, install
 it, go.
 
-### Set up the Northern Widget boards definitions
+### Set up the Northern Widget board definitions
 
 ***This step is required only if you are using a Northern Widget data logger (Margay or Resnik). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
 
@@ -92,7 +92,7 @@ set up support for these boards yourself. We've made a pretty thorough
 walkthrough that you can view here at
 [https://github.com/NorthernWidget/Arduino_Boards](https://github.com/NorthernWidget/Arduino_Boards).
 
-### Add boards definitions for the ATTiny microcontrollers
+### Add board definitions for the ATTiny microcontrollers
 
 ***This step is required only if you have to upload firmware to Northern Widget sensors.***
 
@@ -111,14 +111,19 @@ instructions in the README to add these to your `libraries` folder.
 
 ### Install the graphical user interface (GUI) to set the logger's clock
 
-Follow the instructions at the [SetTimeGUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI).
+Follow the instructions on the [SetTimeGUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI).
 
 <br/>
 
 # Step 2: Programming
 
 Materials needed:
-* Your PC with previous software/libraries loaded
+* Your PC with the software/libraries loaded listed in Step 1:
+  * Arduino IDE
+  * Northern Widget board definitions
+  * ATTinyCore microcontroller board definitions (required only for uploading firmware to Northern Widget sensors)
+  * Northern Widget libraries
+  * SetTimeGUI
 * [Arduino](https://www.arduino.cc/)-compatible device (e.g. your logger)
 * A programming cable, which can be:
   * A USB cable that can attach to this device (current Northern Widget data loggers use a USB type-A to micro-B cable, similar to all but the newest Android smartphones)
@@ -164,9 +169,9 @@ void loop() {
 
 `setup()` and `loop()` are both **functions**. These are specific sets of code that are executed when their names are called in the code. These two functions are special in that:
 
-1.  Every Arduino program much have them.
+1.  Every Arduino program must have them.
 2.  They do not need to be called by code that you write: Arduino automatically interprets and, indeed, requires that these be included.
-  *   Everything inside the curly braces after `setup()` is run once, when the data logger starts running
+  *   Everything inside the curly braces after `setup()` is run once, when the data logger starts running.
   *   Everything inside the curly braces after `loop()` is run continuously, after `setup()`, until the Arduino device loses power.
 
 In addition:
