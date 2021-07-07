@@ -32,7 +32,7 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
     * Northern Widget board and microcontroller definitions
     * (If needed for sensors) third-party microcontroller definitions
     * Clock-setting GUI
-2. [Program your data logger and (if needed) sensor(s)](#step-2-programming)
+2. [Program your data logger and, if needed, sensor(s)](#step-2-programming)
     * Bootload the data logger (ICSP)
     * Burn firmware to sensors (ICSP)
     * Upload code to data logger (USB)
@@ -83,7 +83,7 @@ the downloaded version! Go to
 (Windows users: go for the standard download, not the "app".) Get it, install
 it, go.
 
-### Set up the Northern Widget boards definitions
+### Set up the Northern Widget board definitions
 
 ***This step is required only if you are using a Northern Widget data logger (Margay or Resnik). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
 
@@ -92,12 +92,15 @@ set up support for these boards yourself. We've made a pretty thorough
 walkthrough that you can view here at
 [https://github.com/NorthernWidget/Arduino_Boards](https://github.com/NorthernWidget/Arduino_Boards).
 
-### Add boards definitins for the ATTiny microcontrollers
+### Add board definitions for the ATTiny microcontrollers
 
 ***This step is required only if you have to upload firmware to Northern Widget sensors.***
 
-Follow the [instructions to download and install ATTinyCore microcontroller
-support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE.
+You can follow the [instructions to download and install ATTinyCore microcontroller
+support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE, but for clarity here are some basic instructions:
+  * Go to the [ATTinyCore microcontroller GitHub page](https://github.com/SpenceKonde/ATTinyCore), here you will find all details about ATTinyCore
+  * Scroll down and click on the "Installation" link right above the "Wiring and required components link"
+  * From there, follow the installation instructions based on your preferred installation method - either through the Arduino Boards Manager or manually
 
 ### Install all Northern Widget libraries and their dependencies
 
@@ -108,36 +111,48 @@ instructions in the README to add these to your `libraries` folder.
 
 ### Install the graphical user interface (GUI) to set the logger's clock
 
-Follow the instructions at the [SetTimeGUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI).
+Follow the instructions on the [SetTimeGUI GitHub page](https://github.com/NorthernWidget/SetTime_GUI).
 
 <br/>
 
 # Step 2: Programming
 
 Materials needed:
-* [Arduino](https://www.arduino.cc/)-compatible device
+* Your PC with the software/libraries loaded listed in Step 1:
+  * Arduino IDE
+  * Northern Widget board definitions
+  * ATTinyCore microcontroller board definitions (required only for uploading firmware to Northern Widget sensors)
+  * Northern Widget libraries
+  * SetTimeGUI
+* [Arduino](https://www.arduino.cc/)-compatible device (e.g. your logger)
 * A programming cable, which can be:
-  * A USB cable that can attach to this device (current Northern Widget data loggers use a USB A to micro-B cable, similar to all but the newest Android smartphones)
-  * An in-system programmer that attaches to a 6-pin header on the board
+  * A USB cable that can attach to this device (current Northern Widget data loggers use a USB type-A to micro-B cable, similar to all but the newest Android smartphones)
+* An in-system programmer (ISP) that attaches to a 6-pin header on the board
+  * Examples:
+    * The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
+    * Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
+    * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
+    * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
+  * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
 
-If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.
+**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.**
 
 ## The basics of uploading programs
 
-Arduino programs, often called "sketches", are how you tell An Arduino device what to do. Here is some information to get you started.
+Arduino programs, often called "sketches", are how you tell an Arduino device what to do. Here is some information to get you started.
 
-### Definitions
+### Terminology
 
 * **Microcontroller**: A computer chip that integrates a processor, memory, and methods to take electrical inputs and send electrical signals.
 * **Software**: A program that involves active changes and interactions. This typically exists on a computer and runs within an operating system. An example here is the Arduino IDE.
 * **Firmware**: A program that is uploaded once to a computer or microcontroller and then executes the same set of commands. Any code that you upload to an Arduino-compatible device is an example of firmware.
-* **Sketch**: The Arduino name for the C++ source code in which you write a program
+* **Sketch**: The Arduino name for the C++ source code in which you write a program.
 * **Bootloader**: A small piece of firmware that is installed in a specific portion of the microcontroller's memory. In the case of Arduino-compatible devices, this is almost always to allow the device to be programmed via USB.
-* **Function**: A defined section of code that completes some task and optionally returns output
+* **Function**: A defined section of code that completes some task and optionally returns output.
 * **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another ceral or item); my box of Cap'n Crunch is an object).
 * **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code. It contains a `*.h` and a `*.cpp` file and typically resides within the "libraries" folder of your Arduino app (in the case of Mac) or directory (in the case of Linux or Windows).
 
-### A new program
+### Arduino starting screen
 
 When you open the Arduino IDE, you will see a default blank "sketch":
 ```c++
@@ -154,28 +169,18 @@ void loop() {
 
 `setup()` and `loop()` are both **functions**. These are specific sets of code that are executed when their names are called in the code. These two functions are special in that:
 
-1.  Every Arduino program much have them.
+1.  Every Arduino program must have them.
 2.  They do not need to be called by code that you write: Arduino automatically interprets and, indeed, requires that these be included.
-  *   Everything inside the curly braces after `setup()` is run once, when the data logger starts running
+  *   Everything inside the curly braces after `setup()` is run once, when the data logger starts running.
   *   Everything inside the curly braces after `loop()` is run continuously, after `setup()`, until the Arduino device loses power.
 
 In addition:
 * You may include other code libraries and declare variables before these functions.
 * You may include additional functions after these functions.
 
-### Uploading code to the Arduino-compatible device
+### Bootloading
 
-Once your code is written -- either as a copy/paste of this or as your own -- save your code. All Arduino sketches need to be within their own folder; the Arduino IDE will ensure that this happens. After saving, you can upload in one of two ways:
-
-If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
-
-#### USB
-
-If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
-
-![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
-
-***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
+**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then please proceed to the "Uploading code to the Arduino-compatible device" section below.**
 
 #### In-system programmer
 
@@ -206,6 +211,20 @@ In either case, lights should flash on the programmer and board and a message sh
 1. Try flipping around the ISP (also called "ICSP") attachment,
 2. Make sure that all of your USB-cable connections are secure,
 3. Desperate internet searching.
+
+### Uploading code to the Arduino-compatible device
+
+Once your code is written -- either as a copy/paste of this or as your own -- save your code. All Arduino sketches need to be within their own folder; the Arduino IDE will ensure that this happens. After saving, you can upload in one of two ways:
+
+If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
+
+#### USB
+
+If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
+
+![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
+
+***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
 
 ## Programming Northern Widget sensors
 
