@@ -231,35 +231,50 @@ A simple program for a Margay data logger, connected to no sensors
  * Margay example: no sensors attached
  */
 
-#include "Margay.h"
-#include <TP_Downhole_Longbow.h>
+ #include "Margay.h"
+ // Include any sensor libraries.
+ // The Northern Widget standard interface is demonstrated here.
+ //Sensor mySensor;
 
-Margay Logger; // Instantiate data logger object
+ // Instantiate classes
+ // Sensor mySensor (for any Northern Widget standard sensor library)
+ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 
-String Header = ""; // Information header; starts as an empty string
-uint8_t I2CVals[0] = {}; // I2C addresses of sensors
+ // Empty header to start; will include sensor labels and information
+ String header;
 
-unsigned long UpdateRate = 60; // Number of seconds between readings
+ // I2CVals for sensors
+ // Add these for any sensors that you attach
+ // These are used in the I2C device check (for the warning light)
+ // But at the time of writing, the logger should still work without this.
+ uint8_t I2CVals[] = {};
 
-void setup() {
-    Logger.begin(I2CVals, sizeof(I2CVals), Header);
-    initialize();
-}
+ // Number of seconds between readings
+ // The Watchdog timer will automatically reset the logger after approximately 36 minutes.
+ // We recommend logging intervals of 30 minutes (1800 s) or less.
+ // Intervals that divide cleanly into hours are strongly preferable.
+ uint32_t updateRate = 60;
 
-void loop() {
-  Logger.Run(Update, UpdateRate);
-}
+ void setup(){
+     // No sensors attached; header may remain empty.
+     // header = header + mySensor.getHeader(); // + nextSensor.getHeader() + ...
+     Logger.begin(I2CVals, sizeof(I2CVals), header);
+ }
 
-String Update()
-{
-  initialize();
-  delay(1500);
-  return Walrus.GetString();
-}
+ void loop(){
+     Logger.Run(update, updateRate);
+ }
 
-void initialize()
-{
-}
+ String update() {
+     initialize();
+     //return mySensor.getString(); // If a sensor were attached
+     return ""; // Empty string for this example: no sensors attached
+ }
+
+ void initialize(){
+     //mySensor.begin(); // For any Northern Widget sensor
+                         // Other libraries may have different standards
+ }
 ```
 
 ### Resnik: full breakdown
@@ -493,7 +508,7 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 ## Returning data via telemetry with Particle
 
-Google Sheets: 
+Google Sheets:
 https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 ## Plotting data
