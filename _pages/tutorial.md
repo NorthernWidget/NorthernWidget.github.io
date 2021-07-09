@@ -226,15 +226,6 @@ If you are programming the board via USB, hit the "upload" button (right arrow) 
 
 ***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
 
-## Programming Northern Widget sensors
-
-We include specific instructions for uploading firmware (or, rarely, a bootloader) to Northern Widget sensors on the `README.md` pages that appear in our repositories on GitHub. Those that include this information include:
-* [Project Haar](https://github.com/NorthernWidget-Skunkworks/Project-Haar): ruggedized and waterproof atmospheric temperature, pressure, and relative-humidity sensor
-* [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus): submersible and waterproof sensor to measure pressure and temperature; typically used for water level but can also provide atmospheric conditions.
-* [Project Symbiont](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR): LiDAR interface for distance and orientation measurements.
-
-This documentation includes instructions for both the NorthernWidget [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data loggers, as well as code to work on generic Arduino devices.
-
 ## Programming Northern Widget data loggers
 
 Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Resnik data logger having a complete example. For reference, these data loggers are:
@@ -442,11 +433,20 @@ String Update()
 
 The `Update()` function first calls the `Init()` function to be sure that the sensor is ready to log. It then in this case delays 1500 milliseconds; this is an ad-hoc solution to the question of how long it takes the pressure transducer to settle after being started up, and is a safe large amount of time. This function then can `return` a string of all of the Walrus' readings (one pressure and two temperature measurements) separated by commas. This is then concatenated to a list of logger-internal measurements -- date/time; on-board temperature, pressure, and relative humidity; and onboard voltages for battery and solar-panel status -- and recorded to the SD card. If telemetry were present, these data could also be sent to a remote location.
 
-## Sensor libraries
+## Programming Northern Widget sensors
 
-Northern Widget sensor libraries expose a standardized interface, as noted above. Adding support for a sensor involves three or four steps.
+We include specific instructions for uploading firmware (or, rarely, a bootloader) to Northern Widget sensors on the `README.md` pages that appear in our repositories on GitHub. Those that include this information include:
+* [Project Haar](https://github.com/NorthernWidget-Skunkworks/Project-Haar): ruggedized and waterproof atmospheric temperature, pressure, and relative-humidity sensor
+* [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus): submersible and waterproof sensor to measure pressure and temperature; typically used for water level but can also provide atmospheric conditions.
+* [Project Symbiont](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR): LiDAR interface for distance and orientation measurements.
 
-### Header
+This documentation includes instructions for both the NorthernWidget [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data loggers, as well as code to work on generic Arduino devices.
+
+### Sensor libraries
+
+Northern Widget sensor libraries expose a standardized interface. Adding support for a sensor involves three or four steps.
+
+#### Header
 
 First, include the library's header file, which provides access to its functions:
 
@@ -454,7 +454,7 @@ First, include the library's header file, which provides access to its functions
 #include LibraryName.h
 ```
 
-### Instantiation
+#### Instantiation
 
 Next, "instantiate" an object -- meaning that you check out an instance of the class within the library. By convention, we make `ClassName`, the name of this class, be identical to `LibraryName`. This just makes life easier when there is only one class (or at least, only one significant class) inside each library! To instantiate a library, add a line like the following in an Arduino sketch, below the library `#include`s and above `void setup()`:
 
@@ -464,7 +464,7 @@ ClassName mySensorObject
 
 Here, `mySensorObject` can be whatever you want to call the instance of the object.
 
-### Definition of I2C addresses in use
+#### Definition of I2C addresses in use
 
 As noted in the Resnik example above, this is the trickiest step (but one you can skip) because you need to know the address of your sensor. If your sensor does not have an I2C address, then you may also skip this.
 
@@ -474,7 +474,7 @@ uint8_t I2CVals[1] = {SENSOR_I2C_ADDRESS_1, SENSOR_I2C_ADDRESS_2, ...};
 
 We are hoping to find a way in the future to avoid the need to enter this information by hand.
 
-### Important functions
+#### Important functions
 
 The most important functions for our standardized sensor interface are:
 * `mySensorObject.begin(<variables if needed>)`: performs the work to start up the sensor and prepare it to take measurements
