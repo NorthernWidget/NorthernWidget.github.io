@@ -381,7 +381,7 @@ This is the trickiest step. You need to know what the I2C address of your sensor
 unsigned long UpdateRate = 60; // Number of seconds between readings
 ```
 
-This is the number of seconds between logging events. If it takes 2 seconds to record data, make sure that you give the logger at least 3 seconds between events. The maximum logging time is set by the watchdog timer, which [FINISH HERE]
+This is the number of seconds between logging events. If it takes 2 seconds to record data, make sure that you give the logger at least 3 seconds between events. The maximum logging time is set by the watchdog timer, which is around 34 minutes on Margay (making 30 minutes a practical cap). On Okapi, the attached telemetry board may provide a watchdog timer, which is activated when the board is activated and therefore does not restrict the logging intervals.
 
 >> @BSCHULZ1701: Is there an external WDT on Resnik?
 
@@ -570,8 +570,8 @@ String header;
 uint8_t I2CVals[] = {};
 
 // Number of seconds between readings
-// The Watchdog timer will automatically reset the logger after approximately 36 minutes.
-// We recommend logging intervals of 30 minutes (1800 s) or less.
+// The Particle Boron acts as a watchdog timer, and only when it is enabled;
+// The allows any time interval to be used, up to the unsigned 32-bit limit
 // Intervals that divide cleanly into hours are strongly preferable.
 uint32_t updateRate = 60;
 
@@ -623,6 +623,8 @@ unsigned long Timeout = 0;
 
 int ForceReset(String command);
 
+// If the Particle Boron is waiting for 90 seconds with no signal from the
+// Okapi, pull its RESET pin LOW -- assume it is frozen and must be rebooted.
 ApplicationWatchdog wd(90000, Mayday);
 
 void setup() {
