@@ -232,7 +232,7 @@ Each of our data loggers' `README.md` pages contains information on programming 
 * [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power. (More inforamtion available at the [Margay Library page](https://github.com/NorthernWidget-Skunkworks/Margay_Library))
 * [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi): Telemetry-enabled with integrated solar charging.
 
-### Margay: no sensor example
+### Margay: "No sensors" example
 
 A simple program for a Margay data logger, connected to no sensors
 
