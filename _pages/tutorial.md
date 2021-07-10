@@ -506,6 +506,215 @@ Follow the instructions and images on the [SetTime GUI GitHub page](https://gith
 
 # Step 3: Telemetry
 
+The Okapi data logger contains a [Feather-spec](https://learn.adafruit.com/adafruit-feather/feather-specification) socket for a telemetry module, as seen at the top of the image below.
+
+![Okapi data logger top schematic](https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Okapi/master/Documentation/images/Resnik_v040_top_annotated_20200428.png)
+
+The Okapi can turn on and pass data to Feather-spec-following boards via standard digital interfaces (UART, SPI, I2C). The instructions below will be centered around the mobile-phone-telemetry [Particle Boron](https://docs.particle.io/boron/) board, with significant reference to the documents put together by the folks at [Particle](https://www.particle.io/).
+
+## Particle Boron
+
+Once you have your Particle Boron ([datasheet](https://docs.particle.io/datasheets/boron/boron-datasheet/)), there are a few steps to follow.
+
+Before starting, ensure that you have the proper Particle Boron for support in your country (2G/3G/LTE M1/CAT1). Note that even if you have a particular service in your country, this does not guarantee that Particle's hardware will use it; check their website.
+
+### Standard setup
+
+1. Follow the [Particle Boron quick-start guide](https://docs.particle.io/quickstart/boron/).
+2. Program the Particle Boron: See code below & note the current need to set by hand the same amount of logging intervals as data-return intervals on the Okapi and Particle boards, respectively.
+3. Insert it into the socket of a programmed (see code below) Okapi data logger.
+
+Upon starting the system, the Particle board and the data logger should function together.
+
+>> NOTE: The number of log events before a data transmission is hard-coded into `Okapi.h`. We need to allow this to be user-set.
+
+### Supplying your own SIM card
+
+If you are in a country where Particle does not have [a relationship with local telecom providers](https://docs.particle.io/datasheets/boron/boron-datasheet/#country-compatibility), you must [set up the Particle Boron with your Sim card: https://community.particle.io/t/setting-up-a-boron-with-a-3rd-party-sim-card/45226].
+
+1. [Set up your device via USB](https://support.particle.io/hc/en-us/articles/360039741133-Mesh-Setup-over-USB) (since you will not yet have mobile connection to it). This requires the [Particle command-line interface](https://docs.particle.io/tutorials/developer-tools/cli/) -- here is its [reference guide](https://docs.particle.io/reference/developer-tools/cli/), though the set-up walkthrough provides the commands you need.
+2. Set up your own Sim card; instructions are [here (quick)](https://community.particle.io/t/setting-up-a-boron-with-a-3rd-party-sim-card/45226) and [here (official)](https://support.particle.io/hc/en-us/articles/360039741113-Using-3rd-party-SIM-cards).
+3. Program the Particle Boron (see code below & note the current need to set by hand the same amount of logging intervals as data-return intervals on the Okapi and Particle boards, respectively.
+4. Insert it into the socket of a programmed (see code below) Okapi data logger.
+
+Upon starting the system, the Particle board and the data logger should function together.
+
+### Programming
+
+#### Okapi
+
+Currently, the number of data recordings made before the Okapi enables the Particle Boron is set in [`Okapi.h`](https://github.com/NorthernWidget-Skunkworks/Okapi_Library/blob/master/src/Okapi.h) as `LogCountPush`. *We do realize how clunky this is, and intend to streamline this.*
+
+Beyond this, no changes to Okapi are needed, and any basic code result in data transmitted through the Particle Boron.
+
+Here is a basic script for running the Okapi with no sensors; through the Okapi library (`#include "Okapi.h"`), this will automatically integrate with telemetry via the Particle Boron.
+
+`okapi_no_sensors.ino`
+```c++
+#include "Okapi.h"
+// Include any sensor libraries.
+// The Northern Widget standard interface is demonstrated here.
+//Sensor mySensor;
+
+// Instantiate classes
+// Sensor mySensor (for any Northern Widget standard sensor library)
+Okapi Logger; // Instantiate Okapi object called "Logger"
+
+// Empty header to start; will include sensor labels and information
+String header;
+
+// I2CVals for sensors
+// Add these for any sensors that you attach
+// These are used in the I2C device check (for the warning light)
+// But at the time of writing, the logger should still work without this.
+uint8_t I2CVals[] = {};
+
+// Number of seconds between readings
+// The Watchdog timer will automatically reset the logger after approximately 36 minutes.
+// We recommend logging intervals of 30 minutes (1800 s) or less.
+// Intervals that divide cleanly into hours are strongly preferable.
+uint32_t updateRate = 60;
+
+void setup(){
+    // No sensors attached; header may remain empty.
+    // header = header + mySensor.getHeader(); // + nextSensor.getHeader() + ...
+    Logger.begin(I2CVals, sizeof(I2CVals), header);
+}
+
+void loop(){
+    Logger.Run(update, updateRate);
+}
+
+String update() {
+    initialize();
+    //return mySensor.getString(); // If a sensor were attached
+    return ""; // Empty string for this example: no sensors attached
+}
+
+void initialize(){
+    //mySensor.begin(); // For any Northern Widget sensor
+                        // Other libraries may have different standards
+}
+```
+
+#### Particle Boron
+
+The Particle Boron must have the below program uploaded via the Particle Web IDE or CLI. Set `BACKHAUL_NUM` to equal `LogCountPush` inside `Okapi.h`. *As before: We realize that this is clunky, and intend to improve this.*
+
+```c++
+// Particle Boron backhaul code
+
+#include "dct.h"
+
+//SYSTEM_MODE(SEMI_AUTOMATIC);
+SYSTEM_MODE(AUTOMATIC);
+SYSTEM_THREAD(ENABLED);
+
+#define RST D4 //Reset connected to pin 9
+#define WD_DONE A3 //WD_DONE connected to pin 16
+#define GPIO D14 //GPIO to micro on pin 14
+
+#define BACKHAUL_NUM 5 //Define the number of backhaul values at a given time //FIX make flexible, just read until stop value??
+String GlobalRead;
+String Data[BACKHAUL_NUM];
+
+unsigned long Timeout = 0;
+// int Count = 0;
+
+int ForceReset(String command);
+
+ApplicationWatchdog wd(90000, Mayday);
+
+void setup() {
+    pinMode(GPIO, OUTPUT);
+    digitalWrite(GPIO, HIGH);
+    Cellular.setActiveSim(INTERNAL_SIM);
+    Cellular.clearCredentials();
+    // This set the setup done flag on brand new devices so it won't stay in listening mode
+    const uint8_t val = 0x01;
+    dct_write_app_data(&val, DCT_SETUP_DONE_OFFSET, 1);
+    pinMode(9, INPUT); //Set RST as input to not interfere with rest of system
+    pinMode(D7, OUTPUT);
+    pinMode(WD_DONE, OUTPUT);
+    digitalWrite(WD_DONE, HIGH);
+    Serial.begin(9600);
+    Serial1.begin(38400); //Begin to comunicate with the micro
+    Serial.println("START");
+    Particle.function("Reset", ForceReset);
+    Timeout = millis();
+}
+
+void loop() {
+    while(Serial1.available()) {
+        wd.checkin(); //If any serial print made, service wd //FIX??
+        digitalWrite(D7, HIGH);  //DEBUG!
+        String Val = Serial1.readStringUntil('\n');
+        Serial.println(Val.trim()); //DEBUG!
+        if(Val.trim() == "START BACKHAUL") {
+            digitalWrite(D7, HIGH);  //DEBUG!
+
+            for(int i = 0; i < BACKHAUL_NUM; i++) { //Read data into array
+                Data[i] = Serial1.readStringUntil('\n');
+            }
+            for(int i = 0; i < BACKHAUL_NUM; i++) { //Read data into array
+                Serial.println(Data[i]); //Send the values back on USB serial //FIX! Replace with publish
+            }
+            digitalWrite(D7, LOW); //DEBUG!
+            Cellular.on(); //Turn on cell module
+            for (uint32_t ms = millis(); millis() - ms < 1000; Particle.process());
+            Particle.connect(); //Connect to cloud
+            for (uint32_t ms = millis(); millis() - ms < 10000; Particle.process());  // wait 10 seconds to Connect.  Boron connects in <10seconds on my desk in AutoMode.
+            waitUntil(Particle.connected); //Wait until connection is complete
+            Serial.println("Connected");
+            for(int i = 0; i < BACKHAUL_NUM; i++) { //Read data into array
+                Particle.publish("Data", (Data[i]), WITH_ACK); //Send the values back on USB serial //FIX! Replace with publish
+                delay(1000);
+            }
+            Serial.println("Sent");
+
+            digitalWrite(GPIO, LOW);
+        }
+    }
+    if(millis() - Timeout > 55000) {
+        pinMode(RST, OUTPUT);
+        digitalWrite(RST, HIGH);
+        delay(1);
+        digitalWrite(RST, LOW);
+        delay(1);
+    }
+}
+
+// this function automagically gets called upon a matching POST request
+int ForceReset(String command)
+{
+  // look for the matching argument "coffee" <-- max of 64 characters long
+  if(command == "RST")
+  {
+    //Set FEATHER_EN pin high to connect power to feather
+    Serial.println("RESET");
+    pinMode(RST, OUTPUT);
+    digitalWrite(RST, LOW);
+    delay(1);
+    digitalWrite(RST, HIGH);
+    return 1;
+  }
+  else return -1;
+}
+
+void Mayday() {
+   // System.sleep(SLEEP_MODE_DEEP, 60);
+   pinMode(RST, OUTPUT);
+   digitalWrite(RST, HIGH);
+   delay(5);
+   digitalWrite(RST, LOW);
+   delay(5);
+   digitalWrite(WD_DONE, LOW);  //Cycle VBat if in use, FIX??
+   delay(1);
+   digitalWrite(WD_DONE, HIGH);
+   delay(1);
+}
+```
+
 
 <br/>
 
