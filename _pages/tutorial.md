@@ -85,7 +85,7 @@ it, go.
 
 ### Set up the Northern Widget board definitions
 
-***This step is required only if you are using a Northern Widget data logger (Margay or Resnik). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
+***This step is required only if you are using a Northern Widget data logger (Margay or Okapi). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
 
 The Northern Widget boards are "third-party" Arduino boards, so you'll have to
 set up support for these boards yourself. We've made a pretty thorough
@@ -228,9 +228,9 @@ If you are programming the board via USB, hit the "upload" button (right arrow) 
 
 ## Programming Northern Widget data loggers
 
-Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Resnik data logger having a complete example. For reference, these data loggers are:
-* [Project Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power. (More inforamtion available at the [Margay Library page](https://github.com/NorthernWidget-Skunkworks/Margay_Library))
-* [Project Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik): Telemetry-enabled with integrated solar charging.
+Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Okapi data logger having a complete example. For reference, these data loggers are:
+* [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power. (More inforamtion available at the [Margay Library page](https://github.com/NorthernWidget-Skunkworks/Margay_Library))
+* [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi): Telemetry-enabled with integrated solar charging.
 
 ### Margay: no sensor example
 
@@ -287,9 +287,9 @@ A simple program for a Margay data logger, connected to no sensors
  }
 ```
 
-### Resnik: full breakdown
+### Okapi: full breakdown
 
-*This example is a direct copy/paste of https://github.com/NorthernWidget-Skunkworks/Project-Resnik#how-to-write-a-program.*
+*This example is a direct copy/paste of https://github.com/NorthernWidget-Skunkworks/Project-Okapi#how-to-write-a-program.*
 
 The below program is an example that you can copy and paste directly into the Arduino IDE in order to upload to your data logger. We'll walk you through what each piece of the code is and does.
 
@@ -298,16 +298,16 @@ The below program is an example that you can copy and paste directly into the Ar
 #### Full program
 ```c++
 /*
- * Resnik example: connected with a Walrus pressure--temperature sensor, often
+ * Okapi example: connected with a Walrus pressure--temperature sensor, often
  * used for water-level measurements, via the Longbow I2C/RS-485 translator.
  * Written by Bobby Schulz with a few comments added by Andy Wickert.
  */
 
-#include "Resnik.h"
+#include "Okapi.h"
 #include <TP_Downhole_Longbow.h>
 
 TP_Downhole_Longbow Walrus; // Instantiate Walrus sensor; relict library name
-Resnik Logger; // Instantiate data logger object
+Okapi Logger; // Instantiate data logger object
 
 String Header = ""; // Information header; starts as an empty string
 uint8_t I2CVals[1] = {0x22}; // I2C addresses of sensors
@@ -341,7 +341,7 @@ void Init()
 #### "Include" statements
 
 ```c++
-#include "Resnik.h"
+#include "Okapi.h"
 #include <TP_Downhole_Longbow.h>
 ```
 
@@ -351,10 +351,10 @@ These bring in the two code libraries involved, the former for the data logger a
 
 ```c++
 TP_Downhole_Longbow Walrus; // Instantiate Walrus sensor; relict library name
-Resnik Logger; // Instantiate data logger object
+Okapi Logger; // Instantiate data logger object
 ```
 
-"Instantiating an object" means that we create our own specific versions of the a class of items. This can be thought of as: `Breakfast myBreakfast`. Breakfast is the general concept, but I create "myBreakfast", which I can then modify. In this same way, "Logger" is what we call our Project Resnik data logger, and "Walrus" is what we call our "TP_Downhole_Longbow" sensor; this name is a holdover from an earlier design that is the ancestor of the Walrus. We can then access functions and variables within these two instantiated objects.
+"Instantiating an object" means that we create our own specific versions of the a class of items. This can be thought of as: `Breakfast myBreakfast`. Breakfast is the general concept, but I create "myBreakfast", which I can then modify. In this same way, "Logger" is what we call our Okapi data logger, and "Walrus" is what we call our "TP_Downhole_Longbow" sensor; this name is a holdover from an earlier design that is the ancestor of the Walrus. We can then access functions and variables within these two instantiated objects.
 
 #### Declare the header string
 
@@ -394,7 +394,7 @@ void setup() {
 }
 ```
 
-`setup()` is a special function that runs just once when the logger boots up. In this case, it first adds the Walrus' header to the header string. `GetHeader()` is a standard function that lies within each of our sensor libraries and returns this header information as a `String`. We then pass the header and the I2C values to the Resnik library's `begin()` function. This sets up the header and prepares the data loger to record data. Finally, this function calls `Init()`, which we skip ahead to describe immediately below.
+`setup()` is a special function that runs just once when the logger boots up. In this case, it first adds the Walrus' header to the header string. `GetHeader()` is a standard function that lies within each of our sensor libraries and returns this header information as a `String`. We then pass the header and the I2C values to the Okapi library's `begin()` function. This sets up the header and prepares the data loger to record data. Finally, this function calls `Init()`, which we skip ahead to describe immediately below.
 
 >> (awickert): I still don't understand why we have to pass `sizeof()` and can't just compute that within the function.
 
@@ -418,7 +418,7 @@ void loop() {
 }
 ```
 
-The loop calls the main function of the Resnik library, `Run()`, repeatedly. This puts the logger into a low-power sleep mode and wakes it up only when interrupted by the clock or the "LOG" button. `Update` refers to the function described immediately below. `UpdateRate` is our logging interval defined above.
+The loop calls the main function of the Okapi library, `Run()`, repeatedly. This puts the logger into a low-power sleep mode and wakes it up only when interrupted by the clock or the "LOG" button. `Update` refers to the function described immediately below. `UpdateRate` is our logging interval defined above.
 
 #### `Update()` function: Gives data for the logger to record
 
@@ -440,7 +440,7 @@ We include specific instructions for uploading firmware (or, rarely, a bootloade
 * [Project Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus): submersible and waterproof sensor to measure pressure and temperature; typically used for water level but can also provide atmospheric conditions.
 * [Project Symbiont](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR): LiDAR interface for distance and orientation measurements.
 
-This documentation includes instructions for both the NorthernWidget [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data loggers, as well as code to work on generic Arduino devices.
+This documentation includes instructions for both the NorthernWidget [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi) data loggers, as well as code to work on generic Arduino devices.
 
 ### Sensor libraries
 
@@ -466,7 +466,7 @@ Here, `mySensorObject` can be whatever you want to call the instance of the obje
 
 #### Definition of I2C addresses in use
 
-As noted in the Resnik example above, this is the trickiest step (but one you can skip) because you need to know the address of your sensor. If your sensor does not have an I2C address, then you may also skip this.
+As noted in the Okapi example above, this is the trickiest step (but one you can skip) because you need to know the address of your sensor. If your sensor does not have an I2C address, then you may also skip this.
 
 ```c++
 uint8_t I2CVals[1] = {SENSOR_I2C_ADDRESS_1, SENSOR_I2C_ADDRESS_2, ...};
@@ -485,7 +485,7 @@ The most important functions for our standardized sensor interface are:
 
 We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxygen](https://github.com/sourcey/moxygen) to auto-generate documentation for our firmware libraries. These are currently available for:
 
-* [Resnik data logger](https://github.com/NorthernWidget-Skunkworks/Resnik_Library)
+* [Okapi data logger](https://github.com/NorthernWidget-Skunkworks/Okapi_Library)
 * [Haar atmospheric temperature, pressure, and relative humidity sensor](https://github.com/NorthernWidget-Skunkworks/Haar_Library)
 * [Walrus submersible pressure (water-level) and temperature sensor](https://github.com/NorthernWidget-Skunkworks/Walrus_Library)
 * [Symbiont LiDAR rangefinder and orientation sensor](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library)
@@ -507,14 +507,14 @@ Follow the instructions and images on the [SetTime GUI GitHub page](https://gith
 
 ## Simple overview: turn on batteries, etc.
 
-## Margay / Resnik library references
+## Margay / Okapi library references
 
 We use Doxygen to auto-generate basic code referencing information, and populate this into the Readme markdown files.
 
 * [Firmware library for the Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
-* [Firmware library for the Resnik](https://github.com/NorthernWidget-Skunkworks/Resnik_Library)
+* [Firmware library for the Okapi](https://github.com/NorthernWidget-Skunkworks/Okapi_Library)
 
-## Guide to Margay / Resnik field operations and LED flash patterns
+## Guide to Margay / Okapi field operations and LED flash patterns
 
 [Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) *These LED flashes are applicable to Resnik as well.*
 
