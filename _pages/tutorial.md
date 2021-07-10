@@ -717,6 +717,17 @@ void Mayday() {
 }
 ```
 
+### Returning data via telemetry/webhooks with Particle
+
+* Google Sheets:
+https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
+  * Note: defer to the relevant Northern Widget device page for device-specific code
+
+**Below requires access to a Particle account, either create or log in to one when using these links**
+
+* Code on Particle board for backhaul (data return): https://build.particle.io/shared_apps/6091682fde87cd0008de5572
+* Code on Particle board to set it up with a SIM card (for countries without Particle contracts with local telecom): https://build.particle.io/shared_apps/5ff472d9483a480017a48b79
+
 
 <br/>
 
@@ -742,21 +753,9 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 * Copy/pasting data files
 * Example data-file contents
 
-## Returning data via telemetry/webhooks with Particle
-
-* Google Sheets:
-https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
-  * Note: defer to the relevant Northern Widget device page for device-specific code
-
-**Below requires access to a Particle account, either create or log in to one when using these links**
-
-* Code on Particle board for backhaul (data return): https://build.particle.io/shared_apps/6091682fde87cd0008de5572
-* Code on Particle board to set it up with a SIM card (for countries without Particle contracts with local telecom): https://build.particle.io/shared_apps/5ff472d9483a480017a48b79
-
-## Plotting data
-* Example with Pandas
-* Make sure that I manage the spaces in the headers
-* Think about more formal sets of multiple header lines (e.g., one standard "readable", one WATERML2)
+## Google Sheets and telemetry
+* Login to Google Sheets
+* Might all be in a single cell -- not split by columns, depending on code used to return data
 
 <br/>
 
