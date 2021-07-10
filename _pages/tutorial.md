@@ -37,13 +37,14 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
     * Burn firmware to sensors (ICSP)
     * Upload code to data logger (USB)
     * Set the clock (USB)
-3. [Test and download/view data](#step-3-test-logging)
-4. [Assemble the field housing and sensor mount](#step-4-field-assembly)
+3. [Set up telemetry (Okapi only)](#step-3-telemetry)
+4. [Test and download/view data](#step-4-recording-and-plotting-data)
+5. [Assemble the field housing and sensor mount](#step-5-field-assembly)
     * Enclosure
         * Drill holes for wires
         * Affix logger + batteries
     * Sensor mounting (posts, hose clamps, pipe, ...)
-5. [Deploy](#step-5-deployment)
+6. [Deploy](#step-6-deployment)
 
 While superceded by more recent data-logger models, the [ALog
 README](https://github.com/NorthernWidget/ALog) has some of our most complete
@@ -503,7 +504,12 @@ Follow the instructions and images on the [SetTime GUI GitHub page](https://gith
 
 <br/>
 
-# Step 3: Recording and plotting data
+# Step 3: Telemetry
+
+
+<br/>
+
+# Step 4: Recording and plotting data
 
 ## Simple overview: turn on batteries, etc.
 
@@ -543,7 +549,7 @@ https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 <br/>
 
-# Step 4: Field assembly
+# Step 5: Field assembly
 
 ## Recommended Tools
 
@@ -569,7 +575,7 @@ https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 <br/>
 
-# Step 5: Deployment
+# Step 6: Deployment
 
 This could be a really short add-on to the above section, could be a way to summarize/wrap up, or could be superfluous.
 
