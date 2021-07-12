@@ -44,7 +44,7 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
         * Drill holes for wires
         * Affix logger + batteries
     * Sensor mounting (posts, hose clamps, pipe, ...)
-6. [Deploy](#step-6-deployment)
+6. [Deployment](#step-6-deployment)
 
 While superceded by more recent data-logger models, the [ALog
 README](https://github.com/NorthernWidget/ALog) has some of our most complete
@@ -86,7 +86,7 @@ it, go.
 
 ### Set up the Northern Widget board definitions
 
-***This step is required only if you are using a Northern Widget data logger (Margay or Okapi). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
+***Note: This step is required only if you are using a Northern Widget data logger (Margay or Okapi). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
 
 The Northern Widget boards are "third-party" Arduino boards, so you'll have to
 set up support for these boards yourself. We've made a pretty thorough
@@ -95,7 +95,7 @@ walkthrough that you can view here at
 
 ### Add board definitions for the ATTiny microcontrollers
 
-***This step is required only if you have to upload firmware to Northern Widget sensors.***
+***Note: This step is required only if you have to upload firmware to Northern Widget sensors.***
 
 You can follow the [instructions to download and install ATTinyCore microcontroller
 support](https://github.com/SpenceKonde/ATTinyCore) in the Arduino IDE, but for clarity here are some basic instructions:
@@ -136,7 +136,7 @@ Materials needed:
     * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
   * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
 
-**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.**
+***Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.***
 
 ## The basics of uploading programs
 
@@ -181,7 +181,7 @@ In addition:
 
 ### Bootloading
 
-**Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then please proceed to the "Uploading code to the Arduino-compatible device" section below.**
+***Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then please proceed to the "Uploading code to the Arduino-compatible device" section below.***
 
 #### In-system programmer
 
@@ -383,7 +383,7 @@ unsigned long UpdateRate = 60; // Number of seconds between readings
 
 This is the number of seconds between logging events. If it takes 2 seconds to record data, make sure that you give the logger at least 3 seconds between events. The maximum logging time is set by the watchdog timer, which is around 34 minutes on Margay (making 30 minutes a practical cap). On Okapi, the attached telemetry board may provide a watchdog timer, which is activated when the board is activated and therefore does not restrict the logging intervals.
 
->> @BSCHULZ1701: Is there an external WDT on Resnik?
+>> @BSCHULZ1701: Is there an external WDT on Okapi?
 
 #### `setup()` step: runs once at the start
 
@@ -723,7 +723,7 @@ void Mayday() {
 https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
   * Note: defer to the relevant Northern Widget device page for device-specific code
 
-**Below requires access to a Particle account, either create or log in to one when using these links**
+***Note: following code requires access to a Particle account, either create or log in to one when using these links***
 
 * Code on Particle board for backhaul (data return): https://build.particle.io/shared_apps/6091682fde87cd0008de5572
 * Code on Particle board to set it up with a SIM card (for countries without Particle contracts with local telecom): https://build.particle.io/shared_apps/5ff472d9483a480017a48b79
@@ -744,7 +744,7 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 ## Guide to Margay / Okapi field operations and LED flash patterns
 
-[Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) *These LED flashes are applicable to Resnik as well.*
+[Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) *These LED flashes are applicable to Okapi as well.*
 
 *Let's make these more intuitive and user-friendly*
 
@@ -754,8 +754,8 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 * Example data-file contents
 
 ## Google Sheets and telemetry
-* Login to Google Sheets
-* Might all be in a single cell -- not split by columns, depending on code used to return data
+* Log in to Google Sheets
+* Note: output might all be in a single cell -- not split by columns, depending on code used to return data
 
 <br/>
 
