@@ -496,7 +496,8 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * Make sure your version of the Arduino IDE is up to date
 * Make sure the libraries are correctly installed on your machine
 * If your code compiles properly but still fails to successfully upload:
-  * Double-check that the board definitions are correct for your device
+  * Double-check that the board definitions found under Tools->Board: "[YourCurrentBoard]" are correct for your device
+    * If using Northern Widget devices, this likely should be "ATMega1284p 8MHz"
   * Change the serial port found under Tools->Ports then try uploading again
 
 <br/>
