@@ -492,6 +492,13 @@ We use a combination of [doxygen](https://www.doxygen.nl/index.html) and [moxyge
 * [Symbiont LiDAR rangefinder and orientation sensor](https://github.com/NorthernWidget-Skunkworks/Symbiont-LiDAR_Library)
 * [T9602 atmospheric temperature and relative-humidity sensor](https://github.com/NorthernWidget-Skunkworks/T9602_Library); the main `README.md` page for this third-party sensor contains more general information about using and programming it, so its reference documentation is in a [separate Markdown file](https://github.com/NorthernWidget-Skunkworks/T9602_Library/blob/master/library_reference.md).
 
+## Troubleshooting
+* Make sure your version of the Arduino IDE is up to date
+* Make sure the libraries are correctly installed on your machine
+* If your code compiles properly but still fails to successfully upload:
+  * Double-check that the board definitions are correct for your device
+  * Change the serial port found under Tools->Ports then try uploading again
+
 <br/>
 
 ## Setting the clock
