@@ -26,24 +26,24 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
 
 # Overview
 
-1. [Install requisite software](#step-1-install-software-packages-and-libraries)
+1. [Install software packages and libraries](#step-1-install-software-packages-and-libraries)
     * Arduino IDE
     * Northern Widget libraries and dependencies
     * Northern Widget board and microcontroller definitions
     * (If needed for sensors) third-party microcontroller definitions
     * Clock-setting GUI
-2. [Program your data logger and, if needed, sensor(s)](#step-2-programming)
+2. [Programming](#step-2-programming)
     * Bootload the data logger (ICSP)
-    * Burn firmware to sensors (ICSP)
     * Upload code to data logger (USB)
+    * Burn firmware to sensors (ICSP)
     * Set the clock (USB)
-3. [Set up telemetry (Okapi only)](#step-3-telemetry)
-4. [Test and download/view data](#step-4-recording-and-plotting-data)
-5. [Assemble the field housing and sensor mount](#step-5-field-assembly)
+3. [Telemetry (Okapi only)](#step-3-telemetry)
+4. [Recording and plotting data](#step-4-recording-and-plotting-data)
+5. [Field assembly](#step-5-field-assembly)
     * Enclosure
         * Drill holes for wires
         * Affix logger + batteries
-    * Sensor mounting (posts, hose clamps, pipe, ...)
+    * Sensor mounting (posts, hose clamps, pipe, etc.)
 6. [Deployment](#step-6-deployment)
 
 While superceded by more recent data-logger models, the [ALog
@@ -93,7 +93,7 @@ set up support for these boards yourself. We've made a pretty thorough
 walkthrough that you can view here at
 [https://github.com/NorthernWidget/Arduino_Boards](https://github.com/NorthernWidget/Arduino_Boards).
 
-### Add board definitions for the ATTiny microcontrollers
+### Add board definitions for the ATTinyCore microcontrollers
 
 ***Note: This step is required only if you have to upload firmware to Northern Widget sensors.***
 
