@@ -28,11 +28,13 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
 
 1. [Install software packages and libraries](#step-1-install-software-packages-and-libraries)
     * Arduino IDE
+    * Northern Widget board definitions
+    * ATTinyCore microcontroller definitions
+    * Third-party microcontroller definitions (if needed for sensors)
     * Northern Widget libraries and dependencies
-    * Northern Widget board and microcontroller definitions
-    * (If needed for sensors) third-party microcontroller definitions
     * Clock-setting GUI
 2. [Programming](#step-2-programming)
+    * Materials needed
     * Bootload the data logger (ICSP)
     * Upload code to data logger (USB)
     * Burn firmware to sensors (ICSP)
@@ -118,7 +120,7 @@ Follow the instructions on the [SetTimeGUI GitHub page](https://github.com/North
 
 # Step 2: Programming
 
-Materials needed:
+**Materials needed:**
 * Your PC with the software/libraries loaded listed in Step 1:
   * Arduino IDE
   * Northern Widget board definitions
