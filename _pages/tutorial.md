@@ -251,7 +251,7 @@ A simple program for a Margay data logger, connected to no sensors
 
  // Instantiate classes
  // Sensor mySensor (for any Northern Widget standard sensor library)
- Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
+ Margay Logger; // Margay v2.2; UPDATE CODE TO INDICATE THIS
 
  // Empty header to start; will include sensor labels and information
  String header;
@@ -275,7 +275,7 @@ A simple program for a Margay data logger, connected to no sensors
  }
 
  void loop(){
-     Logger.Run(update, updateRate);
+     Logger.run(update, updateRate);
  }
 
  String update() {
@@ -324,7 +324,7 @@ void setup() {
 }
 
 void loop() {
-  Logger.Run(Update, UpdateRate);
+  Logger.run(Update, UpdateRate);
 }
 
 String Update()
@@ -417,11 +417,11 @@ The `Init()` function calls the `begin()` function, standard within each Norther
 
 ```c++
 void loop() {
-  Logger.Run(Update, UpdateRate);
+  Logger.run(Update, UpdateRate);
 }
 ```
 
-The loop calls the main function of the Okapi library, `Run()`, repeatedly. This puts the logger into a low-power sleep mode and wakes it up only when interrupted by the clock or the "LOG" button. `Update` refers to the function described immediately below. `UpdateRate` is our logging interval defined above.
+The loop calls the main function of the Okapi library, `run()`, repeatedly. This puts the logger into a low-power sleep mode and wakes it up only when interrupted by the clock or the "LOG" button. `Update` refers to the function described immediately below. `UpdateRate` is our logging interval defined above.
 
 #### `Update()` function: Gives data for the logger to record
 
@@ -592,7 +592,7 @@ void setup(){
 }
 
 void loop(){
-    Logger.Run(update, updateRate);
+    Logger.run(update, updateRate);
 }
 
 String update() {
