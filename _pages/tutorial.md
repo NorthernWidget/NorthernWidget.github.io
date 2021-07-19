@@ -200,6 +200,8 @@ Many devices exist to upload bootloaders or firmware, including:
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
 * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
+***Note: be sure to download and/or update drivers for your ISP***
+
 In either case, you follow these two steps:
 
 1. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
