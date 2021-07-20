@@ -207,10 +207,6 @@ In either case, you follow these two steps:
 1. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
 2. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
 
-If you are uploading firmware using the programmer, you then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
-
-![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
-
 Otherwise, if you are uploading a bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
 
 In either case, lights should flash on the programmer and board and a message should appear in the Arduino IDE that tells you whether or not you have succeeded. If it fails, try these approaches in order:
@@ -224,13 +220,19 @@ Once your code is written -- either as a copy/paste of this or as your own -- sa
 
 If you upload the above code to an Arduino device, it will do nothing, because the code contains no instructions.
 
-#### USB
+#### Uploading via USB
 
 If you are programming the board via USB, hit the "upload" button (right arrow) to load the code to the board. (The check mark to the left will test if your code compiles.)
 
 ![Upload sketch (program) to board.](https://github.com/NorthernWidget/ALog/raw/master/doc/figures/ArduinoScreenshots/Uploading.png "Uploading sketch (program) to board.")
 
 ***Upload the Arduino sketch to the board.*** *(Pay no mind to the specific text; this comes from our old [ALog data logger](http://github.com/NorthernWidget/ALog).)*
+
+#### Uploading via In-System Programmer (ISP)
+
+If you are uploading firmware using the programmer, you then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+
+![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
 
 ## Programming Northern Widget data loggers
 
