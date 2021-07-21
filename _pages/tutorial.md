@@ -210,9 +210,11 @@ In either case, you follow these two steps:
 To upload the bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
 
 Lights should flash on the programmer and board and a message should appear in the Arduino IDE that tells you whether or not you have succeeded. If it fails, try these approaches in order:
-1. Try flipping around the ISP (also called "ICSP") attachment,
-2. Make sure that all of your USB-cable connections are secure,
-3. Desperate internet searching.
+1. Try flipping around the ISP (also called "ICSP") attachment;
+2. Make sure that all of your USB-cable connections are secure;
+3. Double-check your drivers are up-to-date;
+4. Double-check if administrator permissions are needed for the Arduino IDE, if so give them;
+5. Desperate internet searching.
 
 ### Uploading code to the Arduino-compatible device
 
