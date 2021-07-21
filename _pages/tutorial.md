@@ -190,7 +190,7 @@ In addition:
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
-You may be uploading via a special device called an "in-circuit system programmer" (or just "in-system programmer, or "ISP") that attaches to a 2x3 header, with either 2.54 mm (0.1") or 1.27 mm (0.05") spacing. In this case, you may be:
+In order to bootload your logger or sensor you will need to use a special device called an "in-circuit system programmer" (or just "in-system programmer" or "ISP") that attaches to a 2x3 header, with either 2.54 mm (0.1") or 1.27 mm (0.05") spacing. ISPs may be used in Northern Widget devices for:
 * uploading a bootloader, or
 * uploading firmware for a sensor.
 
