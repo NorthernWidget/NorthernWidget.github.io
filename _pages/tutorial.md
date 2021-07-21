@@ -190,7 +190,7 @@ In addition:
 
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
-Otherwise, you may be uploading via a special device called an "in-circuit system programmer" (or just "in-system programmer, or "ISP") that attaches to a 2x3 header, with either 2.54 mm (0.1") or 1.27 mm (0.05") spacing. In this case, you may be:
+You may be uploading via a special device called an "in-circuit system programmer" (or just "in-system programmer, or "ISP") that attaches to a 2x3 header, with either 2.54 mm (0.1") or 1.27 mm (0.05") spacing. In this case, you may be:
 * uploading a bootloader, or
 * uploading firmware for a sensor.
 
@@ -207,9 +207,9 @@ In either case, you follow these two steps:
 1. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
 2. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
 
-Otherwise, if you are uploading a bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
+To upload the bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
 
-In either case, lights should flash on the programmer and board and a message should appear in the Arduino IDE that tells you whether or not you have succeeded. If it fails, try these approaches in order:
+Lights should flash on the programmer and board and a message should appear in the Arduino IDE that tells you whether or not you have succeeded. If it fails, try these approaches in order:
 1. Try flipping around the ISP (also called "ICSP") attachment,
 2. Make sure that all of your USB-cable connections are secure,
 3. Desperate internet searching.
@@ -230,7 +230,7 @@ If you are programming the board via USB, hit the "upload" button (right arrow) 
 
 #### Uploading via In-System Programmer (ISP)
 
-If you are uploading firmware using the programmer, you then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+If you are uploading firmware using the in-system programmer, you then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
 ![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
 
