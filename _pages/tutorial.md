@@ -81,16 +81,16 @@ environment we use to write and upload programs to the Northern Widget sensors
 and data loggers. (Other options exist, but this is the most beginner-friendly.)
 We haven't yet tested the brand-new web editor, so we'll be suggesting an
 old-fashioned download. And if you're deploying these in the field, you'll need
-the downloaded version! Go to
+the downloaded version! To download, go to
 [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software).
-(Windows users: go for the standard download, not the "app".) Get it, install
-it, go.
+
+***Note: For Windows users, go for the standard download, not the "app."***
 
 ### Set up the Northern Widget board definitions
 
 ***Note: This step is required only if you are using a Northern Widget data logger (Margay or Okapi). You may skip this step if you are using a standard Arduino or other board for which you already have support through the Arduino IDE.***
 
-The Northern Widget boards are "third-party" Arduino boards, so you'll have to
+The Northern Widget boards are third-party Arduino boards, so you'll have to
 set up support for these boards yourself. We've made a pretty thorough
 walkthrough that you can view here at
 [https://github.com/NorthernWidget/Arduino_Boards](https://github.com/NorthernWidget/Arduino_Boards).
