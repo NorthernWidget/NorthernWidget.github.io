@@ -84,7 +84,7 @@ old-fashioned download. And if you're deploying these in the field, you'll need
 the downloaded version! To download, go to
 [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software).
 
-***Note: For Windows users, go for the standard download, not the "app."***
+***Note: For Windows users, go for the standard download, not the "app".***
 
 ### Set up the Northern Widget board definitions
 
