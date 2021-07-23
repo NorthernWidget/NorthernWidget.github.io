@@ -139,7 +139,7 @@ Follow the instructions on the [SetTimeGUI GitHub page](https://github.com/North
   * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
   * Ensure that you have the correct cables/adapters to attach the ISP to your device - for example, attaching the Olimex AVR-ISP-MK2 to many Northern Widget devices requires a 10-pin to 6-pin adapter in order to connect the ICSP10 output on the ISP to the board
 
-***Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is the board and the USB cable.***
+***Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is your PC, the board and the USB cable.***
 
 ## The basics of uploading programs
 
