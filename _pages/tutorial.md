@@ -136,7 +136,7 @@ Follow the instructions on the [SetTimeGUI GitHub page](https://github.com/North
     * Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
     * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
     * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
-  * A USB type-A to USB type-B cable is required for all ISPs listed, but be sure to check your own for required cables if using an ISP not listed
+  * A USB type-A to USB type-B (not micro-B!) cable is required for all ISPs listed here, but be sure to check your own for required cables/any additional cables if using a different ISP
   * Ensure that you have the correct cables/adapters to attach the ISP to your device - for example, attaching the Olimex AVR-ISP-MK2 to many Northern Widget devices requires a 10-pin to 6-pin adapter in order to connect the ICSP10 output on the ISP to the 6-pin input on the board
 
 ***Note: If you are just programming an Arduino board or data logger, which already has a bootloader installed (if you don't know what this is, it probably has it), then all you need is your PC, the board and the USB cable.***
@@ -153,7 +153,7 @@ Arduino programs, often called "sketches", are how you tell an Arduino device wh
 * **Sketch**: The Arduino name for the C++ source code in which you write a program.
 * **Bootloader**: A small piece of firmware that is installed in a specific portion of the microcontroller's memory. In the case of Arduino-compatible devices, this is almost always to allow the device to be programmed via USB.
 * **Function**: A defined section of code that completes some task and optionally returns output.
-* **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another ceral or item); my box of Cap'n Crunch is an object).
+* **Class**: A container that holds functions and variables. An **object** is a particular instance of a class (e.g., the class is Cap'n Crunch (or pick another cereal or item); my box of Cap'n Crunch is an object).
 * **Library**: A piece of pre-written code that you can `#include` within a program (such as an Arduino *sketch*) in order to use its functions. This typically helps to shorten the length of your sketches by hiding a lot of complicated code and exposing it as functions that can be called in just a single line of code. It contains a `*.h` and a `*.cpp` file and typically resides within the "libraries" folder of your Arduino app (in the case of Mac) or directory (in the case of Linux or Windows).
 
 ### Arduino starting screen
