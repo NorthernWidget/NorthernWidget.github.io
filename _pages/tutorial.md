@@ -772,7 +772,7 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 ## Google Sheets and telemetry
 * Log in to Google Sheets
-* Note: output might all be in a single cell -- not split by columns, depending on code used to return data
+* ***Note: output might all be in a single cell -- not split by columns, depending on code used to return data***
 
 <br/>
 
