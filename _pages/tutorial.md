@@ -200,7 +200,7 @@ Many devices exist to upload bootloaders or firmware, including:
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
 * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
-***Note: be sure to download and/or update drivers for your ISP***
+***Note: Be sure to download and/or update drivers for your ISP.***
 
 In either case, you follow these two steps:
 
@@ -740,7 +740,7 @@ void Mayday() {
 https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
   * Note: defer to the relevant Northern Widget device page for device-specific code
 
-***Note: following code requires access to a Particle account, either create or log in to one when using these links***
+***Note: The following code requires access to a Particle account, either create or log in to one when using these links.***
 
 * Code on Particle board for backhaul (data return): https://build.particle.io/shared_apps/6091682fde87cd0008de5572
 * Code on Particle board to set it up with a SIM card (for countries without Particle contracts with local telecom): https://build.particle.io/shared_apps/5ff472d9483a480017a48b79
