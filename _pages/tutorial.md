@@ -204,7 +204,7 @@ Many devices exist to upload bootloaders or firmware, including:
 
 In either case, you follow these two steps:
 
-1. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+1. Plug your ISP of choice into your computer (via a USB cable) and plug the ISP into your device (via the 6-pin header). There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
 2. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
 
 To upload the bootloader, you go to Tools --> Burn Bootloader. If you are doing this on an Arduino or data-logger board, you may have to plug in the USB cable to supply enough power and to go to Tools --> Port and select the proper serial port for your device. (It is not programmed via the serial port though, so I (Wickert) do not understand why you sometimes have to do this.)
