@@ -533,7 +533,7 @@ The Okapi can turn on and pass data to Feather-spec-following boards via standar
 
 Once you have your Particle Boron ([datasheet](https://docs.particle.io/datasheets/boron/boron-datasheet/)), there are a few steps to follow.
 
-Before starting, ensure that you have the proper Particle Boron for support in your country (2G/3G/LTE M1/CAT1). Note that even if you have a particular service in your country, this does not guarantee that Particle's hardware will use it; check their website.
+Before starting, ensure that you have the proper Particle Boron for support in your country (2G/3G/LTE M1/CAT1). ***Note: even if you have a particular service in your country, this does not guarantee that Particle's hardware will use it; check their website.***
 
 ### Standard setup
 
@@ -547,7 +547,7 @@ Upon starting the system, the Particle board and the data logger should function
 
 ### Supplying your own SIM card
 
-If you are in a country where Particle does not have [a relationship with local telecom providers](https://docs.particle.io/datasheets/boron/boron-datasheet/#country-compatibility), you must [set up the Particle Boron with your Sim card: https://community.particle.io/t/setting-up-a-boron-with-a-3rd-party-sim-card/45226].
+If you are in a country where Particle does not have [a relationship with local telecom providers](https://docs.particle.io/datasheets/boron/boron-datasheet/#country-compatibility), you must [set up the Particle Boron with your Sim card](https://community.particle.io/t/setting-up-a-boron-with-a-3rd-party-sim-card/45226):
 
 1. [Set up your device via USB](https://support.particle.io/hc/en-us/articles/360039741133-Mesh-Setup-over-USB) (since you will not yet have mobile connection to it). This requires the [Particle command-line interface](https://docs.particle.io/tutorials/developer-tools/cli/) -- here is its [reference guide](https://docs.particle.io/reference/developer-tools/cli/), though the set-up walkthrough provides the commands you need.
 2. Set up your own Sim card; instructions are [here (quick)](https://community.particle.io/t/setting-up-a-boron-with-a-3rd-party-sim-card/45226) and [here (official)](https://support.particle.io/hc/en-us/articles/360039741113-Using-3rd-party-SIM-cards).
