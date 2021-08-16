@@ -738,7 +738,7 @@ void Mayday() {
 
 * Google Sheets:
 https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
-  * Note: defer to the relevant Northern Widget device page for device-specific code
+  * ***Note: defer to the relevant Northern Widget device page for device-specific code***
 
 ***Note: The following code requires access to a Particle account, either create or log in to one when using these links.***
 
@@ -756,12 +756,12 @@ https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 We use Doxygen to auto-generate basic code referencing information, and populate this into the Readme markdown files.
 
-* [Firmware library for the Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
-* [Firmware library for the Okapi](https://github.com/NorthernWidget-Skunkworks/Okapi_Library)
+* [Firmware library for Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
+* [Firmware library for Okapi](https://github.com/NorthernWidget-Skunkworks/Okapi_Library)
 
 ## Guide to Margay / Okapi field operations and LED flash patterns
 
-[Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) *These LED flashes are applicable to Okapi as well.*
+[Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) ***Note: these LED flashes are applicable to Okapi as well.***
 
 *Let's make these more intuitive and user-friendly*
 
