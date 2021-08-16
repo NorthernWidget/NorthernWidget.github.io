@@ -35,10 +35,10 @@ excerpt: "**Set up the Arduino IDE, attach the sensors, and compile and
     * Clock-setting GUI
 2. [Programming](#step-2-programming)
     * Materials needed
-    * Bootload the data logger (ICSP)
-    * Upload code to data logger (USB)
-    * Burn firmware to sensors (ICSP)
-    * Set the clock (USB)
+    * Bootloading data logger (ICSP)
+    * Uploading code to data logger (USB or ICSP)
+    * Programming sensors (ICSP)
+    * Setting the clock (USB)
 3. [Telemetry (Okapi only)](#step-3-telemetry)
 4. [Recording and plotting data](#step-4-recording-and-plotting-data)
 5. [Field assembly](#step-5-field-assembly)
