@@ -533,15 +533,15 @@ The Okapi can turn on and pass data to Feather-spec-following boards via standar
 
 Once you have your Particle Boron ([datasheet](https://docs.particle.io/datasheets/boron/boron-datasheet/)), there are a few steps to follow.
 
-Before starting, ensure that you have the proper Particle Boron for support in your country (2G/3G/LTE M1/CAT1). ***Note: even if you have a particular service in your country, this does not guarantee that Particle's hardware will use it; check their website.***
+Before starting, ensure that you have the proper Particle Boron for support in your country (2G/3G/LTE M1/CAT1). ***Note: even if you have a particular service in your country, this does not guarantee that Particle's hardware will use it; check their website for compatability.***
 
 ### Standard setup
 
 1. Follow the [Particle Boron quick-start guide](https://docs.particle.io/quickstart/boron/).
 2. Program the Particle Boron: See code below & note the current need to set by hand the same amount of logging intervals as data-return intervals on the Okapi and Particle boards, respectively.
-3. Insert it into the socket of a programmed (see code below) Okapi data logger.
+3. Insert the Particle Boron board into the socket of a programmed (see code below) Okapi data logger.
 
-Upon starting the system, the Particle board and the data logger should function together.
+Upon starting the system, the Particle Boron board and the data logger should function together.
 
 >> NOTE: The number of log events before a data transmission is hard-coded into `Okapi.h`. We need to allow this to be user-set.
 
@@ -562,7 +562,7 @@ Upon starting the system, the Particle board and the data logger should function
 
 Currently, the number of data recordings made before the Okapi enables the Particle Boron is set in [`Okapi.h`](https://github.com/NorthernWidget-Skunkworks/Okapi_Library/blob/master/src/Okapi.h) as `LogCountPush`. *We do realize how clunky this is, and intend to streamline this.*
 
-Beyond this, no changes to Okapi are needed, and any basic code result in data transmitted through the Particle Boron.
+Beyond this, no changes to Okapi are needed, and any basic code results in data transmitted through the Particle Boron.
 
 Here is a basic script for running the Okapi with no sensors; through the Okapi library (`#include "Okapi.h"`), this will automatically integrate with telemetry via the Particle Boron.
 
