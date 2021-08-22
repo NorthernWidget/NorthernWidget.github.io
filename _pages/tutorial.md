@@ -763,7 +763,7 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 [Margay field and LED flash interpretation guide.](https://github.com/NorthernWidget-Skunkworks/Project-Margay/tree/master/Documentation) ***Note: these LED flashes are applicable to Okapi as well.***
 
-*Let's make these more intuitive and user-friendly*
+>*Let's make these more intuitive and user-friendly*
 
 ## Data files and SD cards
 * Proper ways to swap SD cards
@@ -804,6 +804,6 @@ We use Doxygen to auto-generate basic code referencing information, and populate
 
 # Step 6: Deployment
 
-This could be a really short add-on to the above section, could be a way to summarize/wrap up, or could be superfluous.
+>This could be a really short add-on to the above section, could be a way to summarize/wrap up, or could be superfluous.
 
-Could also include troubleshooting?
+>Could also include troubleshooting?
