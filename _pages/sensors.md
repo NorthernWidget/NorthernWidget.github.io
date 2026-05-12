@@ -14,8 +14,10 @@ header:
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
   caption: "Left to Right: Shanti Penprase, Max van Wyk de Vries, and Gioachino Roberti. Perito Moreno Glacier. *Photo: A. Wickert*"
-excerpt: "Water level to solar radiation.<br>
-          ***Hardware, firmware, and libraries. Just add science.***"
+excerpt: "From water level to solar radiation, Northern Widget develops
+          field-capable sensors with software and firmware libraries that work with any Arduino-compatible device.<br>
+          We also make sure that you can connect common and inexpensive third-party sensors to our systems.<br>
+          ***Open-source versatility for field scientists.***"
 ---
 
 # Northern Widget sensors
