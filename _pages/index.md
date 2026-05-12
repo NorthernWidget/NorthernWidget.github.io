@@ -1,35 +1,37 @@
 ---
 layout: splash
-title: "Northern Widget LLC"
+title: "Northern Widget Documentation"
 permalink: /
 hidden: true
 header:
-  overlay_color: "#222222" #"#5e616c"
+  overlay_color: "#222222"
   overlay_filter: "0.5"
   overlay_image: /assets/images/DysonSW_Ecuador_2020-01-14_15.32.41_modified.jpg
-  #actions:
-  #  - label: "Get started"
-  #    url: "/awtest/"
   caption: "[Spectrally resolving short-wave radiation sensor](https://github.com/NorthernWidget-Skunkworks/Project-Dyson): part of an energy-balance monitoring project for water resources in high-mountain Ecuador. *Photo & Hand: A. Wickert.*"
-excerpt: Open-source for the for the outdoors.<br />
-         <small>Environmental sensors and data loggers.</small>
+excerpt: "Open-source environmental sensors and data loggers.<br>
+          Software, firmware, and hardware documentation — all in one place.<br>
+          ***Start with the Tutorial if you're new. Dive straight in if you're not.***"
 ---
 
-## Contact
+## Where to start
 
-info AT northernwidget DOT com
+New to Northern Widget? The **[Tutorial](/tutorial/)** walks you through installing the Arduino IDE, programming your logger, and heading into the field. Most people start there.
 
-## Sales
+Already know your way around? Jump to your hardware:
 
-We are currently transitioning through the year 2020 from development to development + sales. Please be in contact if you are interested in purchasing anything, and we will let you know what is available. Costs are dependent on quantity and development maturity.
+* **[Data loggers](/loggers/)** — Margay, Resnik
+* **[Sensors](/sensors/)** — Walrus, Haar, Apis, Dyson, and more
+* **[Utilities](/utilities/)** — signal conversion, amplification, breakout boards, and off-the-shelf sensor support
+* **[Software](/software/)** — Arduino libraries, installation tools, and the full API reference
 
-## Research & collaborations
+---
 
-We actively work with collaborators to deploy, design, and improve technology for research all across the world. Contact us if you want to collaborate.
+## About Northern Widget
 
-![NWimg](assets/images/TeamPeritoMoreno-2020-03-13_10.14.17_modified.jpg)
+We build open-source sensors and data loggers for field scientists — low-power, rugged, and designed to keep running when you can't get back to fix them.
+All hardware designs, firmware, and software are freely available on [GitHub](https://github.com/NorthernWidget).
 
-***Left to right: Ph.D. student Matías Romero (Universidad Nacional de Córdoba), Ph.D. student Max van Wyk de Vries (University of Minnesota), Prof. Kelly MacGregor (Macalester College), Ph.D. student Shanti Penprase (University of Minnesota).*** *Hiking to retrieve automated ablation stakes from Perito Moreno glacier, Argentina.* ***NSF-funded Project GUANACO.*** Photo: A. Wickert.
+[About us](/about/)
 
 <div style="text-align:center">
 <img src="/assets/images/NWseal_600px.png" alt="Northern Widget seal" width="200"/>

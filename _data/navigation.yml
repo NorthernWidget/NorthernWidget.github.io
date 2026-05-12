@@ -1,20 +1,12 @@
 # main links
 main:
+  - title: "Tutorial"
+    url: /tutorial/
   - title: "Data loggers"
     url: /loggers/
   - title: "Sensors"
     url: /sensors/
-  - title: "Utility boards"
-    url: /utility-boards/
-  #- title: "Software & Firmware"
-  #  url: /awtest/
-  - title: "Tutorial"
-    url: /tutorial/
-  #- title: "Gallery"
-  #  url: /gallery/
+  - title: "Utilities"
+    url: /utilities/
   - title: "About"
     url: /about/
-#  - title: "GitHub"
-#    url: /splash-page/
-#  - title: "Skunkworks"
-#    url: /splash-page/

@@ -22,10 +22,28 @@ excerpt: "From water level to solar radiation, Northern Widget develops
 
 # Northern Widget sensors
 
+## Apis
+
+*Measure range and orientation with a Garmin LiDAR Lite — power management, firmware watchdog, and MEMS accelerometer onboard.*
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget/Project-Apis)
+&nbsp;|&nbsp;
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget/Apis_Library)
+&nbsp;|&nbsp;
+[<i class="fas fa-fw fa-book"></i> API reference](https://docs.northernwidget.com/Apis_Library/)
+
+<br>
+
+
+# Skunkworks sensors
+
+*These sensors are in active development. They work, but documentation, packaging, and support are still catching up.*
+
 ## Walrus
 
 *Measure water levels (or atmospheric pressure) and temperature with this encapsulated sensor.*
-[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Walrus)
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Walrus)
+&nbsp;|&nbsp;
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Walrus_Library)
 
 <img src="https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Walrus/master/Documentation/images/Walrus_PTH_v000_with_enclosure_and_scale_cleaned_background_20200428.png" alt="Walrus" width="480"/>
 
@@ -33,49 +51,21 @@ excerpt: "From water level to solar radiation, Northern Widget develops
 ## Haar
 
 *Waterproof atmospheric temperature, pressure, and relative humidity sensor.*
-[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Haar)
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Haar)
+&nbsp;|&nbsp;
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Haar_Library)
 
 <img src="https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Haar/master/Documentation/images/Haar_v010_and_housing_exploded_20200228.png" alt="Haar" width="480"/>
 
 
-## LiDAR Lite Symbiont
+## Monarch
 
-*Turn a raw Garmin LiDAR Lite sensor into an integrated tool to measure range and orientation.*
-[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR)
+*Long-wave and spectrally resolved short-wave radiation.*
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Monarch)
+&nbsp;|&nbsp;
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Monarch_Library)
 
-<img src="https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/PrototypeBoxAssembly_orig2019-09-05_20200501.jpg" alt="LiDAR Lite Symbiont" width="480"/>
-
-Includes:
-* 3-axis MEMS accelerometer to measure laser orientation
-  * No need to position the sensor looking straight down to measure level: can trigonometrically coorect
-  * Will record whether the sensor has been disturbed
-* Power management and filtering for high current during laser shots
-* Failsafes to reset the LiDAR Lite when its firmware locks, thus isolating the rest of your system from a potential failure mode.
-* Full instructions for enclosure and mounting
-
-<img src="https://github.com/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/blob/master/Documentation/images/Perspective_view_installed_2019-09-14_15.30.02.jpg?raw=true" alt="LiDAR Lite Symbiont Deployed" width="240"/>
-
-
-## Dyson
-
-*Long-wave and spectrally resolved short-wave radiation.* [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Dyson)
-
-<img src="/assets/images/DysonDeployed_Ecuador_2020-01-14_11.55.11_modified.jpg" alt="Dyson LW and SW Deployed" width="480"/>
-<br/>
-<br/>
-<br/>
-
-
-# Support for off-the-shelf sensors
-
-* Tipping-bucket rain gauges
-  * Reed switch or Hall-effect sensor
-  * Project Tally (optional)
-* T9602 temperature and relative humidity sensor (add library link)
-* Decagon / METER soil moisture probes (do we even have a library, or just `AnalogRead()`?)
-* Maxbotix ultrasonic rangefinders (library link)
-* Thermistors (obviously -- mention on-board Vdiv)
-* Kipp & Zonen solar-radiation sensors (mention instrumentation amp)
+<img src="/assets/images/DysonDeployed_Ecuador_2020-01-14_11.55.11_modified.jpg" alt="Monarch deployed in Ecuador" width="480"/>
 <br/>
 <br/>
 <br/>
@@ -83,7 +73,7 @@ Includes:
 
 # Northern Widget prototypes
 
-The following sensors are still in earlier stages of development.
+*The following sensors are still in earlier stages of development.*
 
 ## Calypso
 
@@ -92,6 +82,7 @@ The following sensors are still in earlier stages of development.
 ## ThermalStake
 
 *Rugged subsurface temperature profiler: thermal conduction and fluid flow.* [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-ThermalStake)
+
 
 # Licenses
 
