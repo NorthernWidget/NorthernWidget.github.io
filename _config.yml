@@ -16,12 +16,12 @@ minimal_mistakes_skin    : "nw" # "air", "aqua", "contrast", "dark", "dirt", "ne
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Northern Widget LLC"
+title                    : "Northern Widget Documentation"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Northern Widget LLC"
 description              : "Open-source technologies to monitor Earth's environments."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://docs.northernwidget.com
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : NorthernWidget/NorthernWidget.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : #/assets/images/photo-1590379492966-e076d8f84c2d.jpeg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
