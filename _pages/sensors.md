@@ -14,10 +14,8 @@ header:
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
   caption: "Left to Right: Shanti Penprase, Max van Wyk de Vries, and Gioachino Roberti. Perito Moreno Glacier. *Photo: A. Wickert*"
-excerpt: "From water level to solar radiation, Northern Widget develops
-          field-capable sensors with software and firmware libraries that work with any Arduino-compatible device.<br>
-          We also make sure that you can connect common and inexpensive third-party sensors to our systems.<br>
-          ***Open-source versatility for field scientists.***"
+excerpt: "Water level to solar radiation.<br>
+          ***Hardware, firmware, and libraries. Just add science.***"
 ---
 
 # Northern Widget sensors
@@ -30,6 +28,10 @@ excerpt: "From water level to solar radiation, Northern Widget develops
 [<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget/Apis_Library)
 &nbsp;|&nbsp;
 [<i class="fas fa-fw fa-book"></i> API reference](https://docs.northernwidget.com/Apis_Library/)
+
+<img src="https://raw.githubusercontent.com/NorthernWidget/Project-Apis/master/Documentation/images/SymbiontLiDAR_v010_top_annotated_20210408.png" alt="Apis board, annotated" width="480"/>
+
+<img src="https://raw.githubusercontent.com/NorthernWidget/Project-Apis/master/Documentation/images/Perspective_view_installed_2019-09-14_15.30.02.jpg" alt="Apis installed in the field" width="480"/>
 
 <br>
 

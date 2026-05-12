@@ -9,8 +9,7 @@ header:
   overlay_image: /assets/images/DysonSW_Ecuador_2020-01-14_15.32.41_modified.jpg
   caption: "[Spectrally resolving short-wave radiation sensor](https://github.com/NorthernWidget-Skunkworks/Project-Dyson): part of an energy-balance monitoring project for water resources in high-mountain Ecuador. *Photo & Hand: A. Wickert.*"
 excerpt: "Open-source environmental sensors and data loggers.<br>
-          Software, firmware, and hardware documentation — all in one place.<br>
-          ***Start with the Tutorial if you're new. Dive straight in if you're not.***"
+          ***New here? Start with the Tutorial.***"
 ---
 
 ## Where to start

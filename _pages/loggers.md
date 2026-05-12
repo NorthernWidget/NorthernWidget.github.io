@@ -14,12 +14,9 @@ header:
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
   caption: "[Prof. G.-H. Crystal Ng](https://www.esci.umn.edu/people/Gene-Hua-Crystal-Ng) adjusting a hose clamp used as an emergency field cinch for a data logger box. *Photo: A. Wickert.*"
-excerpt: "Microamp power.<br>
-          Standard sensor interfaces.<br>
-          Automatic in-field emergency reboot.<br>
-          Human-readable CSV on a swappable SD card.<br>
-          100% Open Source.<br>
-          ***Designed for scientists by scientists***"
+excerpt: "Microamp sleep. Human-readable SD card.<br>
+          It reboots itself. You don't have to.<br>
+          ***Designed by scientists, for scientists.***"
 ---
 
 # Northern Widget data loggers
