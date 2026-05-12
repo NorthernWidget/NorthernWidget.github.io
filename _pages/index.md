@@ -8,8 +8,8 @@ header:
   overlay_filter: "0.5"
   overlay_image: /assets/images/DysonSW_Ecuador_2020-01-14_15.32.41_modified.jpg
   caption: "[Spectrally resolving short-wave radiation sensor](https://github.com/NorthernWidget-Skunkworks/Project-Dyson): part of an energy-balance monitoring project for water resources in high-mountain Ecuador. *Photo & Hand: A. Wickert.*"
-excerpt: "Open-source environmental sensors and data loggers.<br>
-          ***New here? Start with the Tutorial.***"
+excerpt: "Hardware, software, firmware.<br>
+          ***Getting started with a Margay data logger? See the Tutorial.***"
 ---
 
 ## Where to start

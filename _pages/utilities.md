@@ -14,11 +14,9 @@ header:
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
   caption: "Pre-deployment chaos and daisy-chaining Heptapods. A. Wickert (left) and S. Penprase (right). Photo: someone in our group."
-excerpt: "Converting communications protocols.<br>
-          Amplifying signals.<br>
-          Summing pulsed sensor outputs.<br>
-          Just providing enough space to attach wires.<br>
-          ***These utility boards are workhorses of the field.***"
+excerpt: "Boards with one job.<br>
+          Firmware libraries.<br>
+          ***Utilities.***"
 ---
 
 
