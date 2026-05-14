@@ -34,6 +34,9 @@ excerpt: "Peer-reviewed science and theses built with and around<br/>
 
 *Field and laboratory research deployments.*
 
+**Tauro, F., Selker, J., van de Giesen, N., Abrate, T., Uijlenhoet, R., Porfiri, M., Manfreda, S., Caylor, K., Moramarco, T., Benveniste, J., Ciraolo, G., Estes, L., Domeneghetti, A., Perks, M., Corbari, C., Rabiei, E., Ravazzani, G., Bogena, H., Harfouche, A., Brocca, L., Maltese, A., Wickert, A., et al. (2018).** Measurements and Observations in the XXI century (MOXXI): innovation and multidisciplinarity to sense the hydrological cycle. *Hydrological Sciences Journal*, 63(2), 169–196.
+[https://doi.org/10.1080/02626667.2017.1420191](https://doi.org/10.1080/02626667.2017.1420191)
+
 **Saberi, L., McLaughlin, R. T., Ng, G.-H. C., La Frenierre, J., Wickert, A. D., Baraer, M., Zhi, W., Li, L., and Mark, B. G. (2019).** Multi-scale temporal variability in meltwater contributions in a tropical glacierized watershed. *Hydrology and Earth System Sciences*, 23, 405–425.
 [https://doi.org/10.5194/hess-23-405-2019](https://doi.org/10.5194/hess-23-405-2019)
 
