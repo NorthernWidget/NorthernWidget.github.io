@@ -29,7 +29,9 @@ excerpt: "Microamp power. Human-readable files.<br/>
 &nbsp;|&nbsp;
 [<i class="fas fa-fw fa-book"></i> Docs](https://northernwidget.github.io/Margay_Library/)
 
-<img src="https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Margay/master/Documentation/images/MargayAndyHand_cropped_2020-02-16_19.22.39.png" alt="Margay data logger" width="480"/>
+| | |
+| - | - |
+| <img src="https://raw.githubusercontent.com/NorthernWidget/Project-Margay/master/Documentation/images/Margay_v30_top_20250206.jpg" alt="Margay v3.0 top" width="280"/> | <img src="https://raw.githubusercontent.com/NorthernWidget/Project-Margay/master/Documentation/images/Margay_v30_back_with_quarter_20250206.jpg" alt="Margay v3.0 back with quarter for scale" width="280"/> |
 
 
 # Skunkworks data loggers
