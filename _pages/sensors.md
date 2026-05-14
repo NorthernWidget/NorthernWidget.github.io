@@ -98,6 +98,25 @@ excerpt: "Field-capable sensors with software and firmware libraries.<br/>
 *Rugged subsurface temperature profiler: thermal conduction and fluid flow.* [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-ThermalStake)
 
 
+# I2C address reference
+
+When connecting multiple sensors to a shared I2C bus, each device must have a unique address.
+The table below lists the host-visible I2C address for every Northern Widget sensor.
+*Last verified: 2026-05-14. Update this table whenever a sensor is added or a firmware default changes.*
+
+| Device | Default address | Configurable? | Notes |
+|--------|----------------|:-------------:|-------|
+| [Apis](https://github.com/NorthernWidget/Project-Apis) | `0x50` | Yes | Write new address to register `0x0C`; firmware saves to EEPROM |
+| [Haar](https://github.com/NorthernWidget-Skunkworks/Project-Haar) | `0x42` | No | Hardcoded in ATtiny firmware |
+| [Libelle](https://github.com/NorthernWidget-Skunkworks/Project-Libelle) | `0x40` / `0x41` | Hardware | `0x40` face up; `0x41` face down |
+| [Liasis](https://github.com/NorthernWidget-Skunkworks/Project-Liasis) | `0x4A` | No | Fixed by ADS1115 ADDR pin tied to GND |
+| [T9602](https://github.com/NorthernWidget/T9602_Library) | `0x28` | No | Fixed chip address |
+| [Tally](https://github.com/NorthernWidget-Skunkworks/Project-Tally) | `0x33` | Yes | Configurable via library |
+| [Walrus](https://github.com/NorthernWidget-Skunkworks/Project-Walrus) | `0x4D` | In development | EEPROM-based configuration being added to I2C firmware |
+
+The [Longbow](https://github.com/NorthernWidget-Skunkworks/Project-Longbow) RS-485-to-I2C bridge
+takes a user-assigned address and is not listed above.
+
 # Licenses
 
 All designs and documentation are licensed under Creative Commons Attribution Share-Alike v4.0.
