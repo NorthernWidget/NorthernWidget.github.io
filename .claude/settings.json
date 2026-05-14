@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json; print(json.dumps({'hookSpecificOutput': {'hookEventName': 'SessionStart', 'additionalContext': 'STANDING RULE: After any Northern Widget library or hardware repo release, check the relevant library header (ADR_DEFAULT or begin(uint8_t ADR_ = 0xNN)) and firmware (Wire.begin(ADR)) for I2C address changes. If anything changed, update the address table in _pages/sensors.md and the Last verified date. Repos to watch: Apis_Library, Project-Haar/Haar_Library, Project-Libelle/Libelle_Library, Project-Liasis/Liasis_Library, T9602_Library, Project-Tally/Tally_Library, Project-Walrus/Walrus_Library.'}}))\"",
+            "statusMessage": "Loading NW I2C address maintenance rule..."
+          }
+        ]
+      }
+    ]
+  }
+}
