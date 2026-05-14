@@ -61,14 +61,25 @@ excerpt: "Field-capable sensors with software and firmware libraries.<br/>
 <img src="https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Haar/master/Documentation/images/Haar_v010_and_housing_exploded_20200228.png" alt="Haar" width="480"/>
 
 
-## Monarch
+## Libelle
 
-*Long-wave and spectrally resolved short-wave radiation.*
-[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Monarch)
+*Spectrally resolved shortwave (solar) radiation sensor (pyranometer).*
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Libelle)
 &nbsp;|&nbsp;
-[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Monarch_Library)
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Libelle_Library)
 
-<img src="/assets/images/DysonDeployed_Ecuador_2020-01-14_11.55.11_modified.jpg" alt="Monarch deployed in Ecuador" width="480"/>
+<img src="/assets/images/DysonDeployed_Ecuador_2020-01-14_11.55.11_modified.jpg" alt="Libelle shortwave radiation sensor deployed in Ecuador" width="480"/>
+<br/>
+<br/>
+
+
+## Liasis
+
+*Longwave radiation sensor (pyrgeometer).*
+[<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget-Skunkworks/Project-Liasis)
+&nbsp;|&nbsp;
+[<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget-Skunkworks/Liasis_Library)
+
 <br/>
 <br/>
 <br/>

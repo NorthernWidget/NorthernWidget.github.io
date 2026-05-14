@@ -13,7 +13,7 @@ header:
       url: "https://github.com/NorthernWidget"
     - label: <i class="fab fa-fw fa-github"></i> Skunkworks
       url: "https://github.com/NorthernWidget-Skunkworks"
-  caption: "Pre-deployment chaos and daisy-chaining Heptapods. A. Wickert (left) and S. Penprase (right). Photo: someone in our group."
+  caption: "Pre-deployment chaos and daisy-chaining Ophiura boards. A. Wickert (left) and S. Penprase (right). Photo: someone in our group."
 excerpt: "Boards with one job.<br>
           Firmware libraries.<br>
           ***Utilities.***"
@@ -35,6 +35,13 @@ excerpt: "Boards with one job.<br>
 | **Top** | **Bottom** |
 | ------- | ---------- |
 | <img src="https://raw.githubusercontent.com/NorthernWidget/MaxBotix-Helper/master/doc/OSHParkTop.png" width="280"> | <img src="https://raw.githubusercontent.com/NorthernWidget/MaxBotix-Helper/master/doc/OSHParkBottom.png" width="280"> |
+
+## Ophiura
+
+*Distribute one I2C or RS-485 bus connection to up to four sensors.*
+[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget/Project-Ophiura)
+
+Connect 1 I2C connection, half-duplex RS-485 connection, or (with a design variant) full-duplex RS-485 connection to up to four connections.
 
 <br>
 
@@ -61,16 +68,6 @@ excerpt: "Boards with one job.<br>
 
 *High-gain current amplifier.*
 [<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Raven)
-
-## Heptapod
-
-*Screw terminals to connect additional sensors to the same bus.*
-[<i class="fab fa-fw fa-github"></i>](https://github.com/NorthernWidget-Skunkworks/Project-Heptapod)
-
-Connect 1 I2C connection, half-duplex RS-485 connection, or (with a design variant) full-duplex RS-485 connection to up to four connections.
-Turns one connection into four connections, and 1+4 = Heptapod.
-
-<br>
 
 
 # Libraries for off-the-shelf hardware
