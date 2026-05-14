@@ -8,5 +8,7 @@ main:
     url: /sensors/
   - title: "Utilities"
     url: /utilities/
+  - title: "References"
+    url: /references/
   - title: "About"
     url: /about/
