@@ -83,7 +83,7 @@ These work independently of Northern Widget hardware too.
 | ------- | ------------- |
 | [T9602](https://github.com/NorthernWidget/T9602_Library) | Temperature and relative humidity sensor |
 | [MaxBotix](https://github.com/NorthernWidget/MaxBotix_Library) | Ultrasonic rangefinder with temperature correction |
-| [BME](https://github.com/NorthernWidget/BME_Library) | Bosch BME280 temperature, pressure, and humidity |
+| [NW_BME280](https://github.com/NorthernWidget/NW_BME280) &nbsp;\|&nbsp; [<i class="fas fa-fw fa-book"></i> docs](https://docs.northernwidget.com/NW_BME280/) | Bosch BME280 temperature, pressure, and humidity |
 | [DS3231](https://github.com/NorthernWidget/DS3231) | Real-time clock (used in NW data loggers) |
 | [MS5803](https://github.com/NorthernWidget/MS5803) | High-resolution pressure sensor |
 | [MCP3421](https://github.com/NorthernWidget/MCP3421) | 18-bit I2C ADC |
