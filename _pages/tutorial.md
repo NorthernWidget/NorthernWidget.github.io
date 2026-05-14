@@ -239,7 +239,7 @@ If you are uploading firmware using the in-system programmer, you then go to Ske
 ## Programming Northern Widget data loggers
 
 Each of our data loggers' `README.md` pages contains information on programming them, with (at the time of writing) the Okapi data logger having a complete example. For reference, these data loggers are:
-* [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay): Microamp-power. (More inforamtion available at the [Margay Library page](https://github.com/NorthernWidget-Skunkworks/Margay_Library))
+* [Margay](https://github.com/NorthernWidget/Project-Margay): Microamp-power. (More information available at the [Margay Library page](https://northernwidget.github.io/Margay_Library/))
 * [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi): Telemetry-enabled with integrated solar charging.
 
 ### Margay: "No sensors" example
@@ -756,7 +756,7 @@ https://docs.particle.io/datasheets/app-notes/an011-publish-to-google-sheets/
 
 We use Doxygen to auto-generate basic code referencing information, and populate this into the Readme markdown files.
 
-* [Firmware library for Margay](https://github.com/NorthernWidget-Skunkworks/Margay_Library)
+* [Firmware library for Margay](https://northernwidget.github.io/Margay_Library/)
 * [Firmware library for Okapi](https://github.com/NorthernWidget-Skunkworks/Okapi_Library)
 
 ## Guide to Margay / Okapi field operations and LED flash patterns

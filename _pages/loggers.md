@@ -26,6 +26,8 @@ excerpt: "Microamp power. Human-readable files.<br/>
 [<i class="fab fa-fw fa-github"></i> Hardware](https://github.com/NorthernWidget/Project-Margay)
 &nbsp;|&nbsp;
 [<i class="fab fa-fw fa-github"></i> Library](https://github.com/NorthernWidget/Margay_Library)
+&nbsp;|&nbsp;
+[<i class="fas fa-fw fa-book"></i> Docs](https://northernwidget.github.io/Margay_Library/)
 
 <img src="https://raw.githubusercontent.com/NorthernWidget-Skunkworks/Project-Margay/master/Documentation/images/MargayAndyHand_cropped_2020-02-16_19.22.39.png" alt="Margay data logger" width="480"/>
 
